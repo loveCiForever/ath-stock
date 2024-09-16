@@ -13,5 +13,4 @@
   * <strong>Back-End:</strong> Python-Flask or Django / Java-Springboot
   * <strong>Database:</strong> MySQL or PostgreSQL
   * <strong>Training model Machine Learning:</strong> Python-Pytorch, Numpy, TensorFlow, Pandas, Matplotlib
-  * <strong>Stock API</strong>: https://github.com/thinh-vu/vnstock
-
+  * <strong>Stock API</strong>: https://github.com/thinh-vu/vnstock & https://github.com/phamdinhkhanh/vnquant
