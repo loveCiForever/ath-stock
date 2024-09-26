@@ -14,3 +14,29 @@
   * <strong>Database:</strong> MySQL or PostgreSQL
   * <strong>Training model Machine Learning:</strong> Python-Pytorch, Numpy, TensorFlow, Pandas, Matplotlib
   * <strong>Stock API</strong>: https://github.com/thinh-vu/vnstock & https://github.com/phamdinhkhanh/vnquant
+  
+## Folder Structure
+support-stock-investment-using-AI-and-fundamental-analysis/
+├── package.json
+├── node_modules/  // dependencies for React frontend
+├── client/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   ├── containers/
+│   │   ├── actions/
+│   │   ├── reducers/
+│   │   ├── store.js
+│   │   └── index.js
+│   └── README.md
+├── server/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── schemas/
+│   │   └── utils/
+│   ├── config.py
+│   └── requirements.txt
+└── run.py
