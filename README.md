@@ -15,28 +15,41 @@
   * <strong>Training model Machine Learning:</strong> Python-Pytorch, Numpy, TensorFlow, Pandas, Matplotlib
   * <strong>Stock API</strong>: https://github.com/thinh-vu/vnstock & https://github.com/phamdinhkhanh/vnquant
   
-## Folder Structure
-  support-stock-investment-using-AI-and-fundamental-analysis/
-  ├── package.json
-  ├── node_modules/  // dependencies for React frontend
-  ├── client/
-  │   ├── public/
-  │   │   └── index.html
-  │   ├── src/
-  │   │   ├── components/
-  │   │   ├── containers/
-  │   │   ├── actions/
-  │   │   ├── reducers/
-  │   │   ├── store.js
-  │   │   └── index.js
-  │   └── README.md
-  ├── server/
-  │   ├── app/
-  │   │   ├── __init__.py
-  │   │   ├── models/
-  │   │   ├── routes/
-  │   │   ├── schemas/
-  │   │   └── utils/
-  │   ├── config.py
-  │   └── requirements.txt
-  └── run.py
+## graph LR
+    A[support-stock-investment-using-ai-and-fundamental-analysis] --> B[client]
+    B --> C[public]
+    C --> D[index.html]
+    C --> E[favicon.ico]
+    B --> F[src]
+    F --> G[components]
+    G --> H[App.js]
+    G --> I[Header.js]
+    G --> J[Footer.js]
+    F --> K[utils]
+    K --> L[api.js]
+    K --> M[constants.js]
+    F --> N[images]
+    F --> O[styles]
+    O --> P[global.css]
+    F --> Q[index.js]
+    B --> R[package.json]
+    A --> S[server]
+    S --> T[app]
+    T --> U[__init__.py]
+    T --> V[config.py]
+    T --> W[utils]
+    W --> X[__init__.py]
+    T --> Y[app.py]
+    S --> Z[requirements.txt]
+    A --> AA[ml]
+    AA --> BB[data]
+    BB --> CC[raw]
+    BB --> DD[processed]
+    AA --> EE[models]
+    AA --> FF[notebooks]
+    AA --> GG[scripts]
+    AA --> HH[utils]
+    HH --> II[__init__.py]
+    AA --> JJ[requirements.txt]
+    A --> KK[README.md]
+    A --> LL[.gitignore]
