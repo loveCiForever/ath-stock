@@ -53,3 +53,27 @@
     AA --> JJ[requirements.txt]
     A --> KK[README.md]
     A --> LL[.gitignore]
+
+SUPPORT-STOCK-INVESTMENT-USING-AI-AND-FUNDAMENTAL-ANALYSIS
+├── client
+│   ├── node_modules
+│   └── public
+│       ├── athStock-favicon.ico
+│       └── index.html
+└── src
+    └── components
+        ├── App.js
+        ├── Footer.js
+        └── Header.js
+    ├── images
+    ├── styles
+    ├── utils
+    │   └── index.js
+    ├── package-lock.json
+    ├── package.json
+    ├── README_REACT.md
+    └── README.md
+├── ml
+└── server
+    └── README.md
+        └── run.py
