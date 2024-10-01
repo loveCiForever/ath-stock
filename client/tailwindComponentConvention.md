@@ -1,0 +1,6 @@
+1. Layout classes (e.g., w-1/3, flex, justify-center)
+2. Spacing classes (e.g., px-10, py-10, mt-8)
+3. Typography classes (e.g., text-lg, font-normal)
+4. Background and border classes (e.g., bg-white, border-2)
+5. Color classes (e.g., text-orange-400)
+6. Other utility classes (e.g., active:scale-[.98], transition-all)
