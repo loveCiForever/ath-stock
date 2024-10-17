@@ -9,25 +9,23 @@ import facebookLogo from '../assets/facebook.svg';
 import googleLogo from '../assets/google.svg';
 import githubLogo from '../assets/github.svg';
 
-function Register(props) {
+export default function RegisterForm(props) {
 
 
   return (
-    <div className="w-full bg-white px-10 py-20 rounded-3xl shadow-xl">
-      <h1 className="text-3xl tracking-widest font-medium text-center">Sign Up For Free</h1>
+    <div className="w-full px-10 py-20 bg-white shadow-xl rounded-3xl">
+      <h1 className="text-3xl font-medium tracking-widest text-center">Sign Up For Free</h1>
       <div className="mt-8">
         <form className="flex flex-col">
 
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <div className="w-1/2">
               <label className="text-lg font-normal">First Name</label>
               <div>
                 <input onChange={null} 
                       type="firstName"
                       text={null}
-                      className="w-full rounded-xl p-4 mt-1 
-                      text-lg
-                      bg-gray-100"
+                      className="w-full p-4 mt-1 text-lg bg-gray-100 rounded-xl"
                       name="email" 
                       placeholder="Enter your first name" 
                       value={null} />
@@ -40,9 +38,7 @@ function Register(props) {
                 <input onChange={null} 
                       type="text"
                       text={null}
-                      className="w-full rounded-xl p-4 mt-1 
-                      text-lg
-                      bg-gray-100"
+                      className="w-full p-4 mt-1 text-lg bg-gray-100 rounded-xl"
                       name="email" 
                       placeholder="Enter your last name" 
                       value={null} />
@@ -56,9 +52,7 @@ function Register(props) {
               <input onChange={null} 
                     type="text"
                     text={null}
-                    className="w-full rounded-xl p-4 mt-1 
-                    text-lg 
-                    bg-gray-100"
+                    className="w-full p-4 mt-1 text-lg bg-gray-100 rounded-xl"
                     name="email" 
                     placeholder="Enter your user name" 
                     value={null} />
@@ -71,9 +65,7 @@ function Register(props) {
               <input onChange={null} 
                     type="text"
                     text={null}
-                    className="w-full rounded-xl p-4 mt-1 
-                    text-lg 
-                    bg-gray-100"
+                    className="w-full p-4 mt-1 text-lg bg-gray-100 rounded-xl"
                     name="email" 
                     placeholder="Enter your email" 
                     value={null} />
@@ -85,24 +77,21 @@ function Register(props) {
             <input onChange={null} 
                   type="password"
                   text={null} 
-                  className="w-full rounded-xl p-4 mt-1 
-                  text-lg
-                  bg-gray-100"
+                  className="w-full p-4 mt-1 text-lg bg-gray-100 rounded-xl"
                   name="password" 
                   placeholder="Enter your assword" 
                   value={null} />
           </div>
           
-          <div className='mt-3 flex justify-between items-center'>
+          <div className='flex items-center justify-between mt-3'>
             <div>
                 <input type="checkbox" id="remember"/>
-                <label className="justify-center items-center ml-2 
-                      font-normal text-base" 
+                <label className="items-center justify-center ml-2 text-base font-normal" 
                       for="remember">I agree to all Terms, Privacy and Fees</label>
             </div>
           </div>
 
-          <div className='mt-4 flex flex-col gap-y-2'>
+          <div className='flex flex-col mt-4 gap-y-2'>
             <button onClick={null}
                     className="py-3 rounded-xl bg-orange-400 
                     text-xl text-white font-bold
@@ -110,7 +99,7 @@ function Register(props) {
                     active:scale-[.98] active:duration-75 transition-all">
               Sign Up
             </button>
-            <h2 className='my-2 text-center font-medium text-base'>Or sign in with</h2>
+            <h2 className='my-2 text-base font-medium text-center'>Or sign in with</h2>
             
             <div className='flex'>
               <button 
@@ -147,8 +136,8 @@ function Register(props) {
               </button>
             </div>
 
-            <div className='flex content-center items-center justify-center'>
-              <div className='font-normal text-base'>
+            <div className='flex items-center content-center justify-center'>
+              <div className='text-base font-normal'>
                 Already have an account?
               </div>
               <button 
@@ -165,5 +154,3 @@ function Register(props) {
     </div>
   );
 }
-
-export default Register;
