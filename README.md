@@ -41,7 +41,7 @@
   + Ứng dụng trí tuệ nhân tạo trong dự đoán và gợi ý đầu tư:
     - Dự đoán biến động giá cổ phiếu: Trí tuệ nhân tạo sẽ hỗ trợ người dùng trong việc dự đoán biến động giá cổ phiếu, giúp họ đưa ra quyết định đầu tư thông minh.
     - Gợi ý chiến lược đầu tư: Hệ thống sẽ gợi ý các chiến lược đầu tư tối ưu dựa trên hồ sơ rủi ro và mục tiêu tài chính của người dùng.
-    - Phương pháp nghiên cứu:
+- Phương pháp nghiên cứu:
   + Thu thập và xử lý dữ liệu:
     - Nguồn dữ liệu: Thu thập dữ liệu từ các sàn giao dịch chứng khoán.
     - Xử lý dữ liệu: Xử lý dữ liệu để đảm bảo độ chính xác và tính toàn vẹn.
