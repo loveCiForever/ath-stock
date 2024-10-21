@@ -7,7 +7,7 @@ import LoginForm from "../components/LoginForm";
 
 export default function Login() {
   useEffect(() => {
-    document.title = "Login";
+    document.title = "Sign In";
   }, []);
 
   return (
