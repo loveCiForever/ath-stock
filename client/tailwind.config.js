@@ -11,12 +11,27 @@ export default {
         '1/5': "20%",
       },
       minWidth: {
+        '300': '300px',
+        '350': '350px',
+        '400': '400px',
         '480': '480px',
         '600': '600px',
         '900': '900px',
         '960': '960px'
       },
       maxWidth: {
+        '480px': '480px',
+        '490px': '490px',
+        '500': '500px',
+        '560': '560px',
+        '561': '561px',
+        '562': '562px',
+        '563': '563px',
+        '564': '564px',
+        '565': '566px',
+        '566': '566px',
+        '567': '567px',
+        '568': '568px',
         '600': '600px',
         '700': '700px'
       },
@@ -26,7 +41,8 @@ export default {
         '1/9':  "11.11%",
         '1/10': "10%",
         '1/11': "9.09%",
-        '1/12': "8.03%"
+        '1/12': "8.03%",
+        '400px': '400px'
       },
 
       maxHeight: {
@@ -40,10 +56,10 @@ export default {
 
       fontSize: {
         '10px': '10px',
-        '11px': '10px',
-        '12px': '10px',
-        '13px': '10px',
-        '14px': '18px',
+        '11px': '11px',
+        '12px': '12px',
+        '13px': '13px',
+        '14px': '14px',
         '15px': '15px',
         '16px': '16px',
         '17px': '17px',
@@ -94,15 +110,22 @@ export default {
 
       fontWeight: {
         '400': '400',
+        '500': '500',
+        '600': '600',
         '700': '700',
       },
 
       borderRadius: {
-        '10px' : '10px',
-        '30px' : '30px',
+        '10px': '10px',
+        '15px': '15px',
+        '30px': '30px',
       },
 
       margin: {
+        '1px': '1px',
+        '3px': '3px',
+        '5px': '5px',
+        '6px': '6px',
         '10px': '10px',
         '11px': '10px',
         '12px': '10px',
@@ -154,15 +177,15 @@ export default {
         '58px': '58px',
         '59px': '59px',
         '60px': '60px',  
-        '105px' : '105px',
+        '105px': '105px',
       },
 
       padding: {
         '10px': '10px',
-        '11px': '10px',
-        '12px': '10px',
-        '13px': '10px',
-        '14px': '18px',
+        '11px': '11px',
+        '12px': '12px',
+        '13px': '13px',
+        '14px': '14px',
         '15px': '15px',
         '16px': '16px',
         '17px': '17px',
@@ -216,11 +239,13 @@ export default {
       backgroundColor: {
         'placeholder-bg-color' : '#F6F7F9',
         'orange-button-bg-color' : '#FFA31A',
+        'bg-black' : '#1B1B1B'
       },
 
       textColor: {
         'placeholder-text-color' : '#808080',
         'orange-text-color' : '#FFA31A',
+        'text-black': '#1B1B1B'
       }
     },
     variants: {

@@ -15,7 +15,7 @@ export default function App() {
   return ( 
     // ---------------------------------------------- Login Page ----------------------------------------------
     
-    <div className='flex items-center justify-center w-full bg-gray-50 min-w-960'>
+    <div className='flex items-center justify-center w-full h-screen bg-gray-100 min-w-960'>
       <Login/>
     </div>
     
