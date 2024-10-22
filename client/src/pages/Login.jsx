@@ -14,8 +14,8 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center w-auto bg-white rounded-xl px-30px py-30px">
-      <img src={loginPicture} className='max-w-480px ml-30px mr-50px rounded-xl' />
+    <div className="flex items-center justify-center w-auto bg-white shadow-2xl rounded-xl px-30px py-30px">
+      <img src={loginPicture} className='opacity-90 max-w-500px ml-30px mr-50px rounded-xl' />
       {/* <div className="mx-4 border-l border-gray-300 h-400px"></div> */}
       <LoginForm className="w-1/2 lg:w-1/2"/>
     </div>
