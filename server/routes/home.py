@@ -9,3 +9,7 @@ def home():
             "inf" : 'hello world'
         }
     )
+    
+@home_bp.route('/api/posts', methods=['GET'])
+def get_post():
+    return
