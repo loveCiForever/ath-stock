@@ -1,26 +1,23 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_cors import CORS
-# from config import Config
+from config import Config
 
 app = Flask(__name__)
-# app.config.from_object(Config)
+app.config.from_object(Config)
+
 CORS(app)
 
-USER = {
-    "email": "user@example.com",
-    "password": "password123"
-}
+def create_app():
+    from routes.home import home_bp
+    from routes.auth import auth_bp
+    from routes.user import user_bp
+    
+    app.register_blueprint(home_bp)
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(user_bp)
+    return app
 
-@app.route('/token', methods=['POST'])
-def login():
-    data = request.json
-    email = data.get('email')
-    password = data.get('password')
-
-    if email == USER['email'] and password == USER['password']:
-        return jsonify({"access_token": "your_access_token_here"}), 200
-    else:
-        return jsonify({"error": "Invalid credentials"}), 401
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    create_app()
+    app.run(debug=app.config['DEBUG'],port=app.config['PORT']) 
