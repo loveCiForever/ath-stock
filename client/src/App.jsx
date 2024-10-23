@@ -1,24 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import './index.css';
 
-import './index.css'
-
-import athStockLogo from './assets/athStockLogo.png'
-import LoginForm from './components/LoginForm.jsx'
-import RegisterForm from './components/RegisterForm.jsx';
-
-import Login from './pages/Login.jsx'
+import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 
-
-
-export default function App() {
+const App = (props) => {
   return ( 
-    // ---------------------------------------------- Login Page ----------------------------------------------
-    
-    <div className='flex items-center justify-center w-full h-screen bg-gray-100 min-w-960'>
-      <Login/>
-    </div>
-    
-    // ---------------------------------------------- Login Page ----------------------------------------------
+
+    <Router>
+      <div className='flex items-center justify-center w-full h-screen bg-gray-100 min-w-960'>
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
+
+export default App;

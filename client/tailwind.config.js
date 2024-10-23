@@ -33,6 +33,10 @@ export default {
         '567px': '567px',
         '568px': '568px',
         '600px': '600px',
+        '620px': '620px',
+        '630px': '630px',
+        '640px': '640px',
+        '650px': '650px',
         '700px': '700px'
       },
       height: {
@@ -248,9 +252,22 @@ export default {
         'text-black': '#1B1B1B'
       }
     },
+    screens: {
+      'motion-reduce': {'raw': '(prefers-reduced-motion: reduce)'},
+    },
+    animation: {
+      'pulse': 'pulse 8s infinite',
+    },
+    keyframes: {
+      pulse: {
+        '0%, 100%': { opacity: '0.5' },
+        '50%': { opacity: '1' },
+      },
+    },
     variants: {
       extend: {
         cursor: ['hover'],
+        animation: ['motion-reduce'],
       },
     },
   },

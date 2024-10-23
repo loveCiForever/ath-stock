@@ -1,12 +1,14 @@
 import * as React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import axios from "axios";
 
-import appleLogo from "../assets/apple.svg";
-import facebookLogo from "../assets/facebook.svg";
 import googleLogo from "../assets/google.svg";
 import githubLogo from "../assets/github.svg";
+
+import Register from "../pages/Register";
 
 export default function LoginForm(props) {
   const [loginForm, setloginForm] = useState({
@@ -15,7 +17,8 @@ export default function LoginForm(props) {
   });
 
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
+  
   function logMeIn(event) {
     event.preventDefault();
     if (!validateInput(loginForm)) {
@@ -113,6 +116,7 @@ export default function LoginForm(props) {
 
           <div className="flex flex-col mt-20px">
             <button
+              type="submit"
               onClick={logMeIn}
               className="py-14px rounded-xl bg-black
                     text-15px text-white font-400
@@ -122,14 +126,14 @@ export default function LoginForm(props) {
             >
               Sign in
             </button>
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-center mt-10px'>
               <hr className="w-1/4 h-1/2 bg-placeholder-bg-color"/>
               <h2 className="tracking-wider text-center font-400 text-13px my-10px mx-20px text-placeholder-text-color">Or sign in with</h2>
               <hr className="w-1/4 h-1/2 bg-placeholder-bg-color"/>
             </div>
           
             <div className="flex flex-col">
-            <button
+              <button
                 className="flex content-center items-center justify-center 
                   border-2 border-gray-200 py-3 rounded-xl mt-10px
                   bg-white text-black font-normal
@@ -174,6 +178,7 @@ export default function LoginForm(props) {
                 Don't have an account?
               </div>
               <button
+                onClick={() => navigate('/register')}
                 className="ml-3px font-500 text-14px text-black
                   hover:text-black hover:underline
                   active:scale-[.98] active:duration-75 transition-all tracking-wider"
