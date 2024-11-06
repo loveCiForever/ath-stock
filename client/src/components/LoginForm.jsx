@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import axios from "axios";
 
-import googleLogo from "../assets/google.svg";
-import githubLogo from "../assets/github.svg";
+import googleLogo from '../assets/googleLogo.svg';
+import githubLogo from '../assets/githubLogo.svg';
 
 import Register from "../pages/Register";
 
