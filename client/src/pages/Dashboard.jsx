@@ -1,17 +1,15 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
-
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import loginPicture from '../assets/loginPicture.png'
+import loginPicture from '../assets/picture/loginPicture.png'
 
-import RegisterFrom from "../components/RegisterForm.jsx";
-import LoginForm from "../components/LoginForm";
-import WavingBarChart from '../components/WavingBarChar.jsx';
-import Header from '../components/Header.jsx';
-import Footer from '../components/Footer.jsx';
+import Header from '../components/header/Header.jsx';
+import Footer from '../components/footer/Footer.jsx';
+
+
+
+
 
 const Dashboard = (props) => {
   const [token, setToken] = useState(null);

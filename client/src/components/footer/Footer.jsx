@@ -4,11 +4,9 @@ import { useState } from 'react';
 import { useEffect} from 'react';
 import axios from "axios";
 
-import menuIcon from '../assets/menuIcon.svg';
-import notificationIcon from '../assets/notificationIcon.svg';
-import userIcon from '../assets/userIcon.svg';
-import userPicture from '../assets/userPicture.jpg';
-import athStockLogo from '../assets/athStockLogo.png';
+import notificationIcon from '../../assets/icon/notificationIcon.svg';
+import userPicture from '../../assets/picture/userPicture.jpg';
+import athStockLogo from '../../assets/logo/athStockLogo.png';
 
 
 

@@ -1,14 +1,12 @@
-import * as React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import axios from "axios";
 
-import googleLogo from '../assets/googleLogo.svg';
-import githubLogo from '../assets/githubLogo.svg';
+import googleLogo from '../../assets/logo/googleLogo.svg';
+import githubLogo from '../../assets/logo/githubLogo.svg';
 
-import Register from "../pages/Register";
+import Register from "../../pages/Register";
 
 export default function LoginForm(props) {
   const [loginForm, setloginForm] = useState({
@@ -76,7 +74,7 @@ export default function LoginForm(props) {
               onChange={handleChange}
               type="email"
               text={loginForm.email}
-              className="w-4/5 tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color min-w-350"
+              className="w-full tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color min-w-350"
               name="email"
               placeholder="Enter your mail"
               value={loginForm.email}
@@ -88,7 +86,7 @@ export default function LoginForm(props) {
               onChange={handleChange}
               type="password"
               text={loginForm.password}
-              className="w-4/5 tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color min-w-350"
+              className="w-full tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color min-w-350"
               name="password"
               placeholder="Password"
               value={loginForm.password}

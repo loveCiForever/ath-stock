@@ -7,40 +7,41 @@ import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
-import googleLogo from '../assets/googleLogo.svg';
-import githubLogo from '../assets/githubLogo.svg';
+import googleLogo from '../../assets/logo/googleLogo.svg';
+import githubLogo from '../../assets/logo/githubLogo.svg';
 
-import Login from '../pages/Login';
+import Login from '../../pages/Login.jsx';
 
 export default function RegisterForm(props) {
 
   const navigate = useNavigate();
   return (
     <div className="w-full shadow-xs px-30px py-30px">
-      <h1 className=" text-start font-700 text-30px">Sign Up For Free</h1>
+
+      <h1 className="text-start font-700 text-30px">Sign Up For Free</h1>
       <h2 className="tracking-wider text-start font-400 text-15px mt-1px text-placeholder-text-color">To continue with us, create an account.</h2>
+
       <div className="mt-20px">
         <form className="flex flex-col">
-          {/*  */}
           <div className="flex items-center justify-between">
             <div> 
               <input
                 onChange={null}
                 type="text"
                 text={null}
-                className="tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color"
+                className="tracking-wide bg-placeholder-bg-color w-full py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color"
                 name="firstName"
                 placeholder="First Name"
                 value={null}
               />
             </div>
 
-            <div className="ml-10px">
+            <div className="">
               <input
                 onChange={null}
                 type="text"
                 text={null}
-                className="tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color"
+                className="tracking-wide bg-placeholder-bg-color w-full py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color"
                 name="lastName"
                 placeholder="Last Name"
                 value={null}
