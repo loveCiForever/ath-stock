@@ -9,9 +9,9 @@ const AboutUsPage = () => {
   }, []);
 
   return (
-    <h1 className="text-3xl font-bold underline">
+    <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-200">
       About Us Page
-    </h1>
+    </div>
   );
 }
 

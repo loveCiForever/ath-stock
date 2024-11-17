@@ -9,9 +9,9 @@ const LoginPage = () => {
   }, []);
 
   return (
-    <h1 className="">
+    <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-200">
       Log In Page
-    </h1>
+    </div>
   );
 }
 

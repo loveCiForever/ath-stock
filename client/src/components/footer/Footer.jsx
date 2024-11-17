@@ -1,11 +1,11 @@
 
-const Header = ({toggleSideBar}) => {
+const Footer = ({toggleSideBar}) => {
 
   return (
     <h1 className="text-6xl font-bold bg-green-200">
-      Header
+      Footer
     </h1>
   );
 };
 
-export default Header;
+export default Footer;

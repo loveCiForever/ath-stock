@@ -9,9 +9,9 @@ const Community = () => {
   }, []);
 
   return (
-    <h1 className="">
-      Community
-    </h1>
+    <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-200">
+      Community Page
+    </div>
   );
 }
 
