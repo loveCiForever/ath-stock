@@ -1,26 +1,30 @@
+
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage.jsx';
-import Login from './pages/Login.jsx';
-import Register from './pages/Register.jsx';
-import Dashboard from './pages/Dashboard.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import SignUpPage from './pages/SignUpPage.jsx';
+import StockPage from './pages/StockMarketPage.jsx';
+import AboutUsPage from './pages/AboutUsPage.jsx'
+import Community from './pages/Community.jsx';
+import Policy from './pages/Policy.jsx';
 
-import './index.css';
+function App() {
 
-const App = (props) => {
-  return ( 
+  return (
     <Router>
-      <div className='flex items-center justify-center w-full h-screen bg-gray-100 min-w-960'>
-        <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/stock" element={<StockPage />} />
+        <Route path="/aboutus" element={<AboutUsPage />} />
+        <Route path="/community" element={<Community/>} />
+        <Route path="/policy" element={<Policy/>} />
+      </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

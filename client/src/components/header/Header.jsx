@@ -1,9 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import { useLocation } from 'react-router-dom';
 
-import Branding from './Branding';
-// import SearchBarHead from '';
+import Branding from './Branding.jsx';
+import SearchBarHead from './SearchBarHead.jsx';
+import Icon from './Icon.jsx';
+import SignInButton from './SignInButton.jsx';
+
 // import { getAuth, onAuthStateChanged } from "../auth/firebase.jsx";
 
 import hamburgerIcon from '../../assets/icon/hamburgerIcon.svg';
@@ -15,6 +18,8 @@ import userPicture from '../../assets/picture/userPicture.jpg';
 const Header = ({toggleSidebar}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   // const [isSignedIn, setIsSignedIn] = useState(false); // Trach login status
+  // const [user, setUser] = useState(null); // Track the authenticated user
+  const location = useLocation();
   const isStockPage = location.pathname.startsWith("/stock");
 
   useEffect(() => {
