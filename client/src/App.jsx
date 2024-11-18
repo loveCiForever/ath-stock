@@ -7,8 +7,8 @@ import LoginPage from './pages/LoginPage.jsx';
 import SignUpPage from './pages/SignUpPage.jsx';
 import StockPage from './pages/StockMarketPage.jsx';
 import AboutUsPage from './pages/AboutUsPage.jsx'
-import Community from './pages/Community.jsx';
-import Policy from './pages/Policy.jsx';
+import Community from './pages/CommunityPage.jsx';
+import Policy from './pages/PolicyPage.jsx';
 
 function App() {
 

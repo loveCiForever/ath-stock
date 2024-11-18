@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 
 const SignUpPage = () => {
-  const [token, setToken] = useState(null);
   useEffect(() => {
     document.title = "Sign Up";
   }, []);

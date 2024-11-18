@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
-const Community = () => {
-  const [token, setToken] = useState(null);
+const CommunityPage = () => {
   useEffect(() => {
     document.title = "Community";
   }, []);
@@ -15,4 +14,4 @@ const Community = () => {
   );
 }
 
-export default Community;
+export default CommunityPage;

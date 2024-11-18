@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
-const LoginPage = () => {
-  const [token, setToken] = useState(null);
+const PolicyPage = () => {
   useEffect(() => {
-    document.title = "Log In";
+    document.title = "Policy Page";
   }, []);
 
   return (
@@ -15,4 +14,4 @@ const LoginPage = () => {
   );
 }
 
-export default LoginPage;
+export default PolicyPage;

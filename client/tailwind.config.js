@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        '3': '3px',
+      },
+
       width: {
         '1/5': "20%",
         '1/8': "12.5%",   
