@@ -7,8 +7,11 @@ import LoginPage from './pages/LoginPage.jsx';
 import SignUpPage from './pages/SignUpPage.jsx';
 import StockPage from './pages/StockMarketPage.jsx';
 import AboutUsPage from './pages/AboutUsPage.jsx'
-import Community from './pages/CommunityPage.jsx';
-import Policy from './pages/PolicyPage.jsx';
+import CommunityPage from './pages/CommunityPage.jsx';
+import PolicyAndClausePage from './pages/PolicyAndClausePage.jsx';
+import DonatePage from './pages/DonatePage.jsx';
+import FeedBackPage from './pages/FeedBackPage.jsx';
+import HelpPage from './pages/HelpPage.jsx';
 
 function App() {
 
@@ -20,8 +23,11 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/stock" element={<StockPage />} />
         <Route path="/aboutus" element={<AboutUsPage />} />
-        <Route path="/community" element={<Community/>} />
-        <Route path="/policy" element={<Policy/>} />
+        <Route path="/community" element={<CommunityPage/>} />
+        <Route path="/policyandclause" element={<PolicyAndClausePage/>} />
+        <Route path="/donate" element={<DonatePage/>} />
+        <Route path="/feedback" element={<FeedBackPage/>} />
+        <Route path="/help" element={<HelpPage/>} />
       </Routes>
     </Router>
   )

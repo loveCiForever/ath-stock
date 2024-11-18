@@ -16,6 +16,7 @@ const Header = ({toggleSideBar}) => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      console.log("isScrolled:", window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -44,7 +45,10 @@ const Header = ({toggleSideBar}) => {
       </div>
 
       {/* Cụm searchbar */}
-      <SearchBarHead />
+      {/* <SearchBarHead 
+        className={`${isScrolled ? "hidden" : ""} `}
+      /> */}
+      {!isScrolled ? <SearchBarHead /> : <div></div>}
     
       {/* Cụm noti + profile */}
       <div className="flex items-center ">
