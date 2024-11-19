@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
+import Header from '../components/header/Header.jsx';
+import Footer from '../components/footer/Footer.jsx';
+import SideBar from '../components/sideBar/SideBar.jsx';
+
 
 const StockMarketPage = () => {
   useEffect(() => {
@@ -8,8 +12,19 @@ const StockMarketPage = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-200">
-      Stock Market Page
+    <div className='flex flex-col items-center justify-center min-w-[1450px]'>
+      <Header toggleSideBar={toggleSideBar} />
+      {/* isSideBarOpen true thì render SideBar và ngược lại */}
+      {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />}
+
+      {/* <div className="flex flex-col items-center"><Markets /></div> */}
+      {/* <SearchBar /> */}
+      {/* <MainSection /> */}
+      <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-000">
+        Stock Market Page
+      </div>
+
+      <Footer/>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import Header from '../components/header/Header.jsx';
 import Footer from '../components/footer/Footer.jsx';
-// import SideBar from '../components/sidebar/SideBar.jsx';
+import SideBar from '../components/sideBar/SideBar.jsx';
 // import SearchBar from '../components/searchBar/SearchBar.jsx';
 
 // import Markets from '../components/marketSection/Markets.jsx';
@@ -14,21 +14,20 @@ const HomePage = () => {
     document.title = "Home Page";
   }, []);
 
-  // const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  // const toggleSideBar = () => {
-  //   setIsSideBarOpen(!isSideBarOpen);
-  // }
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  }
 
   return (
-    <div className='flex flex-col items-center justify-center'>
-      {/* <Header toggleSideBar={toggleSideBar} /> */}
-      <Header />
+    <div className='flex flex-col items-center justify-center min-w-[1450px]'>
+      <Header toggleSideBar={toggleSideBar} />
       {/* isSideBarOpen true thì render SideBar và ngược lại */}
-      {/* {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />} 
+      {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />}
 
-      <div className="flex flex-col items-center"><Markets /></div>
-      <SearchBar />
-      <MainSection /> */}
+      {/* <div className="flex flex-col items-center"><Markets /></div> */}
+      {/* <SearchBar /> */}
+      {/* <MainSection /> */}
       <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-000">
         Home Page
       </div>

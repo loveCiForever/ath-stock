@@ -34,6 +34,7 @@ const Header = ({toggleSideBar}) => {
       <div className="flex items-center">
         <button 
           className="p-3 hover:rounded-full hover:bg-gray-200 shadow-gray-400 active:scale-[.90] active:duration-75 transition-all"
+          onClick={toggleSideBar}
         >
           <img 
             src={HamburgerIcon} 

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
-import SignUpPage from './pages/SignUpPage.jsx';
+import RegisterPage from './pages/RegisterPage.jsx';
 import StockPage from './pages/StockMarketPage.jsx';
 import AboutUsPage from './pages/AboutUsPage.jsx'
 import CommunityPage from './pages/CommunityPage.jsx';
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/stock" element={<StockPage />} />
         <Route path="/aboutus" element={<AboutUsPage />} />
         <Route path="/community" element={<CommunityPage/>} />
