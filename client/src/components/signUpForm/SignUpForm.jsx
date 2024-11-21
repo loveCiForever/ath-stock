@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 
-import auth from '../../auth/firebase.jsx';
+import { auth } from '../../auth/firebase.jsx';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 import googleLogo from '../../assets/logo/googleLogo.svg';
@@ -13,25 +13,26 @@ import githubLogo from '../../assets/logo/githubLogo.svg';
 const SignUpForm = () => {
   const navigate = useNavigate();
 
-  // const [
-  //   createUserWithEmailAndPassword,
-  //   user,
-  //   loading,
-  //   error,
-  // ] = useCreateUserWithEmailAndPassword(auth);
-  // const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
-  // const onSubmit = data => {
-  //   console.log(data);
-  //   createUserWithEmailAndPassword(data.email, data.password);
-  //   console.log(user)
-  //   console.log(error)
-  // };
-  // if (user) {
-  //   console.log(user)
-  // };
-  // if (error) {
-  //   console.log(error)
-  // }
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth);
+
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  const onSubmit = data => {
+      console.log(data);
+      createUserWithEmailAndPassword(data.email, data.password);
+      console.log(user)
+      console.log(error)
+  };
+  if (user) {
+      console.log(user)
+  };
+  if (error) {
+      console.log(error)
+  }
 
   return (
     <div className="w-full shadow-xs px-[25px] py-[30px]">
