@@ -2,31 +2,35 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 
 import googleLogo from '../../assets/logo/googleLogo.svg';
 import githubLogo from '../../assets/logo/githubLogo.svg';
 
 export default function SignInForm(props) {
+  const navigate = useNavigate();
+  // const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  // const onSubmit = data => {
+  //     console.log(data)
+  // };
 
   return (
-    <div className="w-full shadow-xs pr-[30px] py-[30px min-w-96">
+    <div className="w-full shadow-xs pr-[30px] py-[30px] min-w-[96px]">
       <h1 className="text-start font-700 text-30px">Welcome Back!</h1>
-      <h2 className="tracking-wider text-start font-400 text-15px mt-1px text-placeholder-text-color">To continue, sign in to your account.</h2>
-      <div className="mt-20px">
+      <h2 className="tracking-wider text-start font-400 text-[15px] mt-[1px] text-placeholder-text-color">To continue, sign in to your account.</h2>
+      <div className="mt-[20px]">
         <form className="flex flex-col">
-          {/* <label className="font-500 text-16px">Email</label> */}
           <div>
             <input
               onChange={null}
               type="email"
               text={null}
-              className="w-full tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color min-w-350"
+              className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-placeholder-text-color min-w-[350px]"
               name="email"
               placeholder="Enter your mail"
               value={null}
             />
           </div>
-          {/* <label className="font-400 text-18px mt-18px">Password</label> */}
           <div className="mt-10px">
             <input
               onChange={handleChange}
@@ -40,15 +44,6 @@ export default function SignInForm(props) {
           </div>
 
           <div className="flex items-center justify-end mt-10px">
-            {/* <div>
-              <input type="checkbox" id="remember" />
-              <label
-                className="items-center justify-center ml-2 font-400 text-15px"
-                for="remember"
-              >
-                Remember for 30 days
-              </label>
-            </div> */}
             <button
               className="font-600 text-14px text-black
                     hover:text-black

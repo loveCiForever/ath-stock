@@ -3,16 +3,35 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 
+import auth from '../../auth/firebase.jsx';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+
 import googleLogo from '../../assets/logo/googleLogo.svg';
 import githubLogo from '../../assets/logo/githubLogo.svg';
 
 
-const SignUpForm = (props) => {
+const SignUpForm = () => {
   const navigate = useNavigate();
-  const { signup, handleSubmit, watch, formState: { errors }, reset } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-  };
+
+  // const [
+  //   createUserWithEmailAndPassword,
+  //   user,
+  //   loading,
+  //   error,
+  // ] = useCreateUserWithEmailAndPassword(auth);
+  // const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  // const onSubmit = data => {
+  //   console.log(data);
+  //   createUserWithEmailAndPassword(data.email, data.password);
+  //   console.log(user)
+  //   console.log(error)
+  // };
+  // if (user) {
+  //   console.log(user)
+  // };
+  // if (error) {
+  //   console.log(error)
+  // }
 
   return (
     <div className="w-full shadow-xs px-[25px] py-[30px]">
@@ -28,55 +47,52 @@ const SignUpForm = (props) => {
           <div className="flex items-center justify-between">
             <div className="">
               <input
-                {...signup("firstName", { require: true })}
                 type="text"
                 className="tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-900"
                 name="firstName"
                 placeholder="First Name"
+                {...register("firstName", { require: true })}
               />
-              {/* <span 
-                className="label-text text-error">{errors.email?.type === 'required' && "First name is required"}
-              </span> */}
             </div>
 
             <div className="">
               <input
-                {...signup("firstName", { require: true })}
                 type="text"
                 className="tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
                 name="lastName"
                 placeholder="Last Name"
+                {...register("lastName", { require: true })}
               />
             </div>
           </div>
 
           <div className="mt-10px">
             <input
-              {...signup("email", { required: true })}
               type="email"
               className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
               name="email"
               placeholder="Email"
+              {...register("email", { require: true })}
             />
           </div>
 
           <div className="mt-10px">
             <input
-              {...signup("userName", { required: true })}
               type="text"
               className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
               name="userName"
               placeholder="User name"
+              {...register("userName", { require: true })}
             />
           </div>
 
           <div className="mt-10px">
             <input
-              {...signup("password", { required: true })}
               type="password"
               className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
               name="password"
               placeholder="Password"
+              {...register("password", { require: true })}
             />
           </div>
 
@@ -95,7 +111,6 @@ const SignUpForm = (props) => {
           <div className="flex flex-col mt-[20px]">
             <button
               onClick={null}
-              type='submit'
               className="py-[14px] rounded-xl bg-black text-15px text-white font-400 tracking-wider hover:bg-gray-700 active:scale-[.98] active:duration-75 transition-all"
             >
               Sign up
@@ -109,6 +124,7 @@ const SignUpForm = (props) => {
             <div className="flex flex-col">
               <button
                 className="flex content-center items-center justify-center border-2 border-gray-200 py-3 rounded-xl mt-[10px] bg-white text-black font-normal hover:bg-gray-100 active:scale-[.98] active:duration-75 transition-all "
+                type='submit'
               >
                 <img src={googleLogo} />
                 <h1 className="ml-10px text-14px font-500">Sign up with Google</h1>
@@ -133,6 +149,7 @@ const SignUpForm = (props) => {
               </button>
             </div>
           </div>
+
 
         </form>
       </div>
