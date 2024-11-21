@@ -47,7 +47,6 @@ const SideBar = ({ toggleSideBar }) => {
           <div className="mt-[20px] mr-[32px] text-2xl font-bold font-inter">
             {/* <Branding /> */}
             athStock .NET
-            
           </div>
         </div>
         
@@ -167,7 +166,7 @@ const SideBar = ({ toggleSideBar }) => {
       <div className='mt-[16px]'>
         <button 
           onClick={() => {
-            console.log("Close button clicked");
+            console.log("Close sidebar button clicked");
             closeBar();
           }}
           className=' bg-orange-100 hover:bg-orange-300 rounded-tr-full rounded-br-full flex items-center justify-center pl-2 pr-3 py-2 active:scale-[.90] active:duration-75 transition-all'

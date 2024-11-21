@@ -3,43 +3,59 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+
+import { auth } from '../../auth/firebase.jsx';
 
 import googleLogo from '../../assets/logo/googleLogo.svg';
 import githubLogo from '../../assets/logo/githubLogo.svg';
 
-export default function SignInForm(props) {
+const SignInForm = () => {
   const navigate = useNavigate();
-  // const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
-  // const onSubmit = data => {
-  //     console.log(data)
-  // };
+
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  const [
+      signInWithEmailAndPassword,
+      user,
+      loading,
+      error,
+  ] = useSignInWithEmailAndPassword(auth);
+  const onSubmit = data => {
+      console.log(data);
+      signInWithEmailAndPassword(data.email, data.password)
+  };
+  if (user) {
+      console.log(user)
+  };
+  if (error) {
+      console.log(error)
+  };
 
   return (
     <div className="w-full shadow-xs pr-[30px] py-[30px] min-w-[96px]">
       <h1 className="text-start font-700 text-30px">Welcome Back!</h1>
       <h2 className="tracking-wider text-start font-400 text-[15px] mt-[1px] text-placeholder-text-color">To continue, sign in to your account.</h2>
       <div className="mt-[20px]">
-        <form className="flex flex-col">
+
+        <form 
+          className="flex flex-col"
+          onSubmit={handleSubmit(onSubmit)}>
           <div>
             <input
-              onChange={null}
               type="email"
-              text={null}
               className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-placeholder-text-color min-w-[350px]"
               name="email"
               placeholder="Enter your mail"
-              value={null}
+              {...register("email", { required: true })}
             />
           </div>
           <div className="mt-10px">
             <input
-              onChange={handleChange}
               type="password"
-              text={loginForm.password}
               className="w-full tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color min-w-350"
               name="password"
               placeholder="Password"
-              value={loginForm.password}
+              {...register("password", { required: true })}
             />
           </div>
 
@@ -48,6 +64,7 @@ export default function SignInForm(props) {
               className="font-600 text-14px text-black
                     hover:text-black
                     0 active:scale-[.98] hover:underline active:duration-75 transition-all "
+              type='submit'
             >
               Forgot password
             </button>
@@ -56,7 +73,7 @@ export default function SignInForm(props) {
           <div className="flex flex-col mt-20px">
             <button
               type="submit"
-              onClick={logMeIn}
+              onClick={null}
               className="py-14px rounded-xl bg-black
                     text-15px text-white font-400
                     tracking-wider
@@ -111,11 +128,17 @@ export default function SignInForm(props) {
           </div>
         </form>
       </div>
-      {error && (
+
+
+      {null && (
         <div className="flex items-center justify-center w-1/2 py-2 mx-auto mt-6 text-2xl font-semibold text-white bg-red-500 border-2 border-red-300 error rounded-xl">
-          {error}
+          {null}
         </div>
       )}
+
+
     </div>
   );
-}
+};
+
+export default SignInForm;

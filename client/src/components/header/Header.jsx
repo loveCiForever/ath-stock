@@ -34,7 +34,10 @@ const Header = ({toggleSideBar}) => {
       <div className="flex items-center">
         <button 
           className="p-3 hover:rounded-full hover:bg-gray-200 shadow-gray-400 active:scale-[.90] active:duration-75 transition-all"
-          onClick={toggleSideBar}
+          onClick={() => {
+            console.log("Hamrburger icon clicked")
+            toggleSideBar();
+          }}
         >
           <img 
             src={HamburgerIcon} 
@@ -53,7 +56,12 @@ const Header = ({toggleSideBar}) => {
     
       {/* Cụm noti + profile */}
       <div className="flex items-center ">
-        <button className="p-2 hover:rounded-full hover:bg-gray-200 shadow-gray-400 active:scale-[.90] active:duration-75 transition-all">
+        <button 
+          className="p-2 hover:rounded-full hover:bg-gray-200 shadow-gray-400 active:scale-[.90] active:duration-75 transition-all"
+          onClick={() => {
+            console.log("Notification button clicked")
+          }}
+        >
             <img 
               src={EmailUnRead} 
               className="w-6 opacity-70"

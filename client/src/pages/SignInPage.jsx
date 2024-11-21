@@ -4,7 +4,7 @@ import LoginPicture from '../assets/picture/loginPicture.png';
 import SignInForm from '../components/signInForm/SignInForm.jsx'
 
 
-const SignInPage = (props) => {
+const SignInPage = () => {
   const [token, setToken] = useState(null);
   useEffect(() => {
     document.title = "Sign In";
