@@ -63,7 +63,7 @@ const Header = ({toggleSideBar}) => {
         {/* Sau cập nhật class user:  
         - signed-> user avatar, click vào tùy chỉnh profile 
         - ngược lại để avatar khách, click vào có tùy chọn login hoặc signup */}
-        <div className="box-border flex flex-col items-center justify-center ml-4 border-4 border-yellow-500 rounded-full">
+        <div className="box-border flex flex-col items-center justify-center ml-4 border-4 border-orange-300 rounded-full">
           <img 
             src={userPicture} 
             alt="User avatar" 

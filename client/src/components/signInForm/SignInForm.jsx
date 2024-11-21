@@ -1,69 +1,15 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import axios from "axios";
 
 import googleLogo from '../../assets/logo/googleLogo.svg';
 import githubLogo from '../../assets/logo/githubLogo.svg';
 
-import Register from "../../pages/RegisterPage.jsx";
-
-export default function LoginForm(props) {
-  const [loginForm, setloginForm] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
-  
-  function logMeIn(event) {
-    event.preventDefault();
-    if (!validateInput(loginForm)) {
-      setError("Invalid Input");
-      return;
-    }
-    axios
-      .post("http://localhost:5173/token", {
-        email: loginForm.email,
-        password: loginForm.password,
-      })
-      .then((response) => {
-        props.setToken(response.data.access_token);
-        localStorage.setItem('token', response.data.access_token);
-      })
-      .catch((error) => {
-        if (error.response && error.response.status === 401) {
-          setError("Invalid credentials");
-        } else {
-          setError("Login failed");
-        }
-          console.error(error);
-      });
-
-    setloginForm({
-      email: "",
-      password: "",
-    });
-  }
-
-  function validateInput(input) {
-    if (!input.email || !input.password) {
-      return false;
-    }
-    return true;
-  }
-
-  function handleChange(event) {
-    const { value, name } = event.target;
-    setloginForm((prevNote) => ({
-      ...prevNote,
-      [name]: value,
-    }));
-  }
+export default function SignInForm(props) {
 
   return (
-    <div className="w-full shadow-xs px-0px py-30px min-w-96">
+    <div className="w-full shadow-xs pr-[30px] py-[30px min-w-96">
       <h1 className="text-start font-700 text-30px">Welcome Back!</h1>
       <h2 className="tracking-wider text-start font-400 text-15px mt-1px text-placeholder-text-color">To continue, sign in to your account.</h2>
       <div className="mt-20px">
@@ -71,13 +17,13 @@ export default function LoginForm(props) {
           {/* <label className="font-500 text-16px">Email</label> */}
           <div>
             <input
-              onChange={handleChange}
+              onChange={null}
               type="email"
-              text={loginForm.email}
+              text={null}
               className="w-full tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color min-w-350"
               name="email"
               placeholder="Enter your mail"
-              value={loginForm.email}
+              value={null}
             />
           </div>
           {/* <label className="font-400 text-18px mt-18px">Password</label> */}
@@ -125,11 +71,11 @@ export default function LoginForm(props) {
               Sign in
             </button>
             <div className='flex items-center justify-center mt-10px'>
-              <hr className="w-1/4 h-1/2 bg-placeholder-bg-color"/>
+              <hr className="w-1/4 h-1/2 bg-placeholder-bg-color" />
               <h2 className="tracking-wider text-center font-400 text-13px my-10px mx-20px text-placeholder-text-color">Or sign in with</h2>
-              <hr className="w-1/4 h-1/2 bg-placeholder-bg-color"/>
+              <hr className="w-1/4 h-1/2 bg-placeholder-bg-color" />
             </div>
-          
+
             <div className="flex flex-col">
               <button
                 className="flex content-center items-center justify-center 
@@ -141,24 +87,7 @@ export default function LoginForm(props) {
                 <img src={googleLogo} />
                 <h1 className="ml-10px text-14px font-500">Sign in with Google</h1>
               </button>
-              {/* <button
-                className="flex content-center items-center justify-center 
-                  border-2 border-gray-200 py-3 rounded-xl mt-10px
-                  bg-white text-black font-normal
-                  hover:bg-gray-100
-                  active:scale-[.98] active:duration-75 transition-all "
-              >
-                <img src={facebookLogo} />
-              </button> */}
-              {/* <button
-                className="flex content-center items-center justify-center 
-                  border-2 border-gray-200 py-3 rounded-xl mt-10px
-                  bg-white text-black font-normal
-                  hover:bg-gray-100
-                  active:scale-[.98] active:duration-75 transition-all "
-              >
-                <img src={appleLogo} />
-              </button> */}
+
               <button
                 className="flex content-center items-center justify-center 
                   border-2 border-gray-200 py-3 rounded-xl mt-10px
@@ -166,7 +95,7 @@ export default function LoginForm(props) {
                   hover:bg-gray-100
                   active:scale-[.98] active:duration-75 transition-all "
               >
-                <img src={githubLogo}/>
+                <img src={githubLogo} />
                 <h1 className="ml-10px text-14px font-500">Sign in with Github </h1>
               </button>
             </div>
@@ -176,7 +105,7 @@ export default function LoginForm(props) {
                 Don't have an account?
               </div>
               <button
-                onClick={() => navigate('/register')}
+                onClick={() => navigate('/signup')}
                 className="ml-3px font-500 text-14px text-black
                   hover:text-black hover:underline
                   active:scale-[.98] active:duration-75 transition-all tracking-wider"
