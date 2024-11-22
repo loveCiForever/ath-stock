@@ -1,5 +1,5 @@
-import React, { useEffect, useRef} from 'react';
-
+import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Branding from '../header/Branding';
 
 import HamburgerIcon from '../../assets/icon/hamburgerIcon.svg';
@@ -8,7 +8,7 @@ import MarketTrendIcon from '../../assets/icon/MarketTrendIcon.png';
 import CommunityIcon from '../../assets/icon/communityIcon.png';
 import UserGuideIcon from '../../assets/icon/userGuideIcon.png';
 import PlusIcon from '../../assets/icon/plusIcon.png';
-import UpArrowIcon from  '../../assets/icon/upArrowIcon.png';
+import UpArrowIcon from '../../assets/icon/upArrowIcon.png';
 import SettingIcon from '../../assets/icon/settingIcon.png';
 import FeedBackIcon from '../../assets/icon/feedbackIcon.png';
 import CloseIcon from '../../assets/icon/closeIcon.png';
@@ -17,7 +17,22 @@ import OutSideOfSideBarClick from './OutSideOfSideBarClick';
 
 const SideBar = ({ toggleSideBar }) => {
   const sidebarRef = useRef(null);
+  const navigate = useNavigate();
   // const sideBarOutSideClick = OutSideOfSideBarClick(sidebarRef);
+  // const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  // useEffect(() => {
+  //   const handlePathChange = () => {
+  //     setCurrentPath(window.location.pathname);
+  //   };
+
+  //   window.addEventListener('popstate', handlePathChange);
+
+  //   return () => {
+  //     window.removeEventListener('popstate', handlePathChange);
+  //   };
+  // }, []);
+  // console.log(toggleSideBar(false));
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -34,53 +49,77 @@ const SideBar = ({ toggleSideBar }) => {
   }, [toggleSideBar]);
 
   const closeBar = () => toggleSideBar(false);
-
+  const isActive = (path) => currentPath === path ? 'bg-orange-200' : 'bg-orange-000';
   return (
     <aside
       ref={sidebarRef}
-      className="fixed inset-0 z-50 flex transition ease-in-out"
+      className="fixed inset-0 z-50 mt-[65px] flex transition ease-in-out"
     >
       <div className="w-64 bg-white shadow-xl relative pr-[10px]">
         {/* {sideBarOutSideClick ? {closeBar} : null} */}
         {/* {sideBarOutSideClick && closeBar()} */}
-        <div className='flex items-center justify-center'>
+        {/* <div className='flex items-center justify-center'>
           <div className="mt-[20px] mr-[32px] text-2xl font-bold font-inter">
-            {/* <Branding /> */}
-            athStock .NET
+            <Branding />
+            
           </div>
-        </div>
-        
+        </div> */}
 
-        <nav className="mt-6">
+
+        <nav className="mt-0">
           <div className="flex flex-col text-[14px] tracking-wide pr-[30px]">
-            <a className="flex items-center py-2 pl-6 text-black-700 bg-orange-300 rounded-r-full bg-opacity-100">
+            <button
+              className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
+              onClick={() => {
+                navigate('/');
+                console.log("Home button click, navigate to home page")
+              }}
+            >
               <img src={HomeIcon} className="w-6" alt="Home" />
               <span className="pl-[14px] pb-[1px]">Home</span>
-            </a>
-            <a className="flex items-center py-2 pl-6 rounded-r-full bg-orange-000 hover:bg-orange-100 mt-2">
+            </button>
+            <button
+              className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/markettrend' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
+              onClick={() => {
+                navigate('/markettrend');
+                console.log("Market trend button click, navigate to market trend page")
+              }}
+            >
               <img
                 src={MarketTrendIcon}
                 className="w-6 h-6"
                 alt="Market Trends"
               />
               <span className="pl-[14px]">Market Trends</span>
-            </a>
-            <a className="flex items-center py-2 pl-6 rounded-r-full bg-orange-000 hover:bg-orange-100 mt-2">
+            </button>
+            <button
+              className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/community' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
+              onClick={() => {
+                navigate('/community');
+                console.log("Community button click, navigate to Community page")
+              }}
+            >
               <img
                 src={CommunityIcon}
                 className="w-6 h-6"
                 alt="Market Trends"
               />
               <span className="pl-[14px]">Community</span>
-            </a>
-            <a className="flex items-center py-2 pl-6 rounded-r-full bg-orange-000 hover:bg-orange-100 mt-2">
+            </button>
+            <button
+              className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/userguide' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
+              onClick={() => {
+                navigate('/userguide');
+                console.log("User guide button click, navigate to user guide page")
+              }}
+            >
               <img
                 src={UserGuideIcon}
                 className="w-6 h-6"
                 alt="Market Trends"
               />
               <span className="pl-[14px]">User Guide</span>
-            </a>
+            </button>
           </div>
           <div className="border-b border-gray-200 my-[10px]"></div>
 
@@ -151,28 +190,34 @@ const SideBar = ({ toggleSideBar }) => {
             </a>
           </div>
           <div className="absolute bottom-[18px] pt-[10px] border-t w-full mr-[10px] text-[14px]">
-            <a className="flex items-center py-3 pl-6 rounded-r-full hover:bg-gray-100">
+            <button className="flex items-center mt-2 py-2 pr-[104px] pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full">
               <img src={SettingIcon} className="w-6 h-6" alt="Market Trends" />
               <span className="pl-[14px] pb-[1px] font-semibold">Settings</span>
-            </a>
-            <a className="flex items-center py-3 pl-6 rounded-r-full hover:bg-gray-100">
+            </button>
+            <button 
+              className={`flex items-center mt-2 py-2 pr-[60px] pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/feedback' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
+              onClick={() => {
+                navigate('/feedback');
+                console.log("Send feedback clicked")
+              }}
+            >
               <img src={FeedBackIcon} className="w-6 h-6" alt="Market Trends" />
               <span className="pl-[14px] pb-[3px] font-semibold">Send Feedback</span>
-            </a>
+            </button>
           </div>
         </nav>
       </div>
 
       <div className='mt-[16px]'>
-        <button 
+        <button
           onClick={() => {
             console.log("Close sidebar button clicked");
             closeBar();
           }}
           className=' bg-orange-100 hover:bg-orange-300 rounded-tr-full rounded-br-full flex items-center justify-center pl-2 pr-3 py-2 active:scale-[.90] active:duration-75 transition-all'
         >
-          <img 
-            src={CloseIcon} 
+          <img
+            src={CloseIcon}
             alt="close"
             className='w-4' />
         </button>

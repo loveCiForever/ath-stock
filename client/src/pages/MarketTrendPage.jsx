@@ -6,10 +6,15 @@ import Footer from '../components/footer/Footer.jsx';
 import SideBar from '../components/sideBar/SideBar.jsx';
 
 
-const StockMarketPage = () => {
+const MarketTrendPage = () => {
   useEffect(() => {
-    document.title = "Stock Market";
+    document.title = "Market Trend";
   }, []);
+
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  }
 
   return (
     <div className='flex flex-col items-center justify-center min-w-[1450px]'>
@@ -21,7 +26,7 @@ const StockMarketPage = () => {
       {/* <SearchBar /> */}
       {/* <MainSection /> */}
       <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-000">
-        Stock Market Page
+        Market Trend Page
       </div>
 
       <Footer/>
@@ -29,4 +34,4 @@ const StockMarketPage = () => {
   );
 }
 
-export default StockMarketPage;
+export default MarketTrendPage;

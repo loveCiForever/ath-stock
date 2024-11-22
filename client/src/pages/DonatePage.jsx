@@ -5,7 +5,14 @@ import Header from '../components/header/Header.jsx';
 import Footer from '../components/footer/Footer.jsx';
 import SideBar from '../components/sideBar/SideBar.jsx';
 
-export default function DonatePage() {
+import DonateByMomo from '../assets/picture/donateByMomo.jpg';
+import DonateByBank from '../assets/picture/donateByBank.jpg';
+
+const DonatePage = () => {
+  useEffect(() => {
+    document.title = "Donate";
+  }, []);
+
   const [amount, setAmount] = useState('')
   const [paymentMethod, setPaymentMethod] = useState('credit-card')
 
@@ -15,77 +22,80 @@ export default function DonatePage() {
     alert(`Thank you for your donation of $${amount}!`)
   }
 
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  }
+  // const toggleSearchBar = (false);
+  // console.log(window.location.pathname === '/donate');
   return (
-    <div className="min-h-screen bg-orange-300 flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-orange-700">Make a Donation for athStock</h2>
-          <p className="text-orange-600">Your generosity makes a difference</p>
+    <div className='flex flex-col items-center justify-center min-w-[1450px] min-h-screen'>
+      <Header toggleSideBar={toggleSideBar} />
+      {/* isSideBarOpen true thì render SideBar và ngược lại */}
+      {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar}  />}
+
+      {/* <div className="flex flex-col items-center"><Markets /></div> */}
+      {/* <SearchBar /> */}
+      {/* <MainSection /> */}
+      <div className='flex flex-col items-center justify-center flex-grow'>
+        {/* <label className='text-3xl font-semibold mb-[10px] font-mono bg-orange-100 px-[95px] py-3 rounded-2xl'>Account owner: Nguyen Quang (Victor) Huy </label>
+
+        <div className='flex bg-orange-100 p-5 mt-[1px] rounded-2xl'>
+          <img
+            src={DonateByBank}
+            alt=""
+            className="w-[400px] p-5 bg-orange-100"
+          />
+
+          <img
+            src={DonateByMomo}
+            alt=""
+            className="w-[400px] p-5 bg-orange-100 ml-[10px]"
+          />
+        </div> */}
+        <h1 className='text-6xl font-bold tracking-wider'>Donate to athStock</h1>
+        <h2 className='text-3xl font-medium text-center mt-[20px]'>
+          Your generous contribution will make a significant impact on athStock mission and help us 
+        </h2>
+        <h2 className='text-3xl font-medium text-center'>
+          continue our work towards empowering students through technology.
+        </h2>
+        
+        <div className='flex mt-[100px] justify-center items-center'>
+          <div className='flex flex-col justify-center items-center'>
+            {/* <span className='text-xl font-mono font-semibold'>Account owner: Nguyen Quang Huy</span> */}
+            <span className='text-xl font-mono font-semibold px-10 py-1 bg-orange-300 rounded-xl mb-[10px]'>TP Bank</span>
+            <img 
+              src={DonateByBank} 
+              alt="" 
+              className='w-[350px]'
+            />
+          </div>
+
+          <h1 className='text-2xl font-semibold font-mono mx-[30px]'>OR</h1>
+
+          <div className='flex flex-col justify-center items-center'>
+            {/* <span className='text-xl font-mono font-semibold'>Account owner: Nguyen Quang Huy</span> */}
+            <span className='text-xl font-mono font-semibold px-16 py-1 bg-orange-300 rounded-xl mb-[10px]'>Momo</span>
+            <img 
+              src={DonateByMomo} 
+              alt="" 
+              className='w-[350px]'
+            />
+          </div>
+          {/* <div>
+            <p className='text-2xl font-mono'>Tien Phong Commercial Joint Stock Bank (TP Bank)</p>
+            <p className='text-2xl font-mono'>Account owner: Nguyen Quang Huy</p>
+            <p className='text-2xl font-mono'>Account ID: 0963 04 08 05</p>
+          </div> */}
+
         </div>
-        <form onSubmit={handleSubmit}>
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="amount" className="block text-sm font-medium text-orange-700 mb-1">
-                Donation Amount
-              </label>
-              <div className="relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <span className="text-orange-400">$</span>
-                </div>
-                <input
-                  type="number"
-                  name="amount"
-                  id="amount"
-                  className="pl-7 block w-full rounded-md border-orange-300 focus:border-orange-500 focus:ring-orange-500"
-                  placeholder="0.00"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                  required
-                />
-              </div>
-            </div>
-            <div>
-              <span className="block text-sm font-medium text-orange-700 mb-1">Payment Method</span>
-              <div className="mt-2 space-y-2">
-                <div className="flex items-center">
-                  <input
-                    id="credit-card"
-                    name="payment-method"
-                    type="radio"
-                    className="h-4 w-4 text-orange-600 focus:ring-orange-500"
-                    checked={paymentMethod === 'credit-card'}
-                    onChange={() => setPaymentMethod('credit-card')}
-                  />
-                  <label htmlFor="credit-card" className="ml-3 block text-sm font-medium text-gray-700">
-                    Credit Card
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    id="paypal"
-                    name="payment-method"
-                    type="radio"
-                    className="h-4 w-4 text-orange-600 focus:ring-orange-500"
-                    checked={paymentMethod === 'paypal'}
-                    onChange={() => setPaymentMethod('paypal')}
-                  />
-                  <label htmlFor="paypal" className="ml-3 block text-sm font-medium text-gray-700">
-                    PayPal
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="mt-6">
-            <button
-              type="submit"
-              className="w-full px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-            >
-              Donate Now
-            </button>
-          </div>
-        </form>
+
       </div>
+      <Footer />
     </div>
-  )
-}
+
+  );
+};
+
+export default DonatePage;

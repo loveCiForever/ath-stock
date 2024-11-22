@@ -12,18 +12,14 @@ import githubLogo from '../../assets/logo/githubLogo.svg';
 
 const SignInForm = () => {
   const navigate = useNavigate();
-
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
-  const [
-      signInWithEmailAndPassword,
-      user,
-      loading,
-      error,
-  ] = useSignInWithEmailAndPassword(auth);
+  const [ signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+
   const onSubmit = data => {
       console.log(data);
       signInWithEmailAndPassword(data.email, data.password)
   };
+  
   if (user) {
       console.log(user)
       console.log("Sign in successful")

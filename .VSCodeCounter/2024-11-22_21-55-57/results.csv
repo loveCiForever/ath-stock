@@ -1,0 +1,41 @@
+"filename", "language", "JavaScript", "HTML", "JSON", "JavaScript JSX", "Markdown", "CSS", "XML", "comment", "blank", "total"
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\README.md", "Markdown", 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\eslint.config.js", "JavaScript", 37, 0, 0, 0, 0, 0, 0, 0, 2, 39
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\index.html", "HTML", 0, 13, 0, 0, 0, 0, 0, 0, 0, 13
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\package-lock.json", "JSON", 0, 0, 6447, 0, 0, 0, 0, 0, 1, 6448
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\package.json", "JSON", 0, 0, 37, 0, 0, 0, 0, 0, 1, 38
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\postcss.config.js", "JavaScript", 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\App.jsx", "JavaScript JSX", 0, 0, 0, 31, 0, 0, 0, 0, 6, 37
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\Router.jsx", "JavaScript JSX", 0, 0, 0, 10, 0, 0, 0, 1, 1, 12
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\assets\icon\hamburgerIcon.svg", "XML", 0, 0, 0, 0, 0, 0, 3, 0, 0, 3
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\assets\logo\appleLogo.svg", "XML", 0, 0, 0, 0, 0, 0, 3, 0, 0, 3
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\assets\logo\facebookLogo.svg", "XML", 0, 0, 0, 0, 0, 0, 10, 0, 0, 10
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\assets\logo\githubLogo.svg", "XML", 0, 0, 0, 0, 0, 0, 3, 0, 0, 3
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\assets\logo\googleLogo.svg", "XML", 0, 0, 0, 0, 0, 0, 8, 0, 0, 8
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\auth\firebase.jsx", "JavaScript JSX", 0, 0, 0, 17, 0, 0, 0, 6, 3, 26
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\footer\Footer.jsx", "JavaScript JSX", 0, 0, 0, 31, 0, 0, 0, 0, 5, 36
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\header\Account.jsx", "JavaScript JSX", 0, 0, 0, 35, 0, 0, 0, 0, 9, 44
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\header\Branding.jsx", "JavaScript JSX", 0, 0, 0, 19, 0, 0, 0, 0, 2, 21
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\header\Header.jsx", "JavaScript JSX", 0, 0, 0, 62, 0, 0, 0, 18, 15, 95
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\header\SearchBarHead.jsx", "JavaScript JSX", 0, 0, 0, 23, 0, 0, 0, 0, 3, 26
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\sideBar\OutSideOfSideBarClick.jsx", "JavaScript JSX", 0, 0, 0, 18, 0, 0, 0, 0, 5, 23
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\sideBar\SideBar.jsx", "JavaScript JSX", 0, 0, 0, 164, 0, 0, 0, 4, 17, 185
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\signInForm\SignInForm.jsx", "JavaScript JSX", 0, 0, 0, 134, 0, 0, 0, 0, 16, 150
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\components\signUpForm\SignUpForm.jsx", "JavaScript JSX", 0, 0, 0, 180, 0, 0, 0, 0, 17, 197
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\index.css", "CSS", 0, 0, 0, 0, 0, 7, 0, 0, 2, 9
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\main.jsx", "JavaScript JSX", 0, 0, 0, 9, 0, 0, 0, 0, 2, 11
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\AboutUsPage.jsx", "JavaScript JSX", 0, 0, 0, 21, 0, 0, 0, 4, 7, 32
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\CommunityPage.jsx", "JavaScript JSX", 0, 0, 0, 21, 0, 0, 0, 4, 7, 32
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\DonatePage.jsx", "JavaScript JSX", 0, 0, 0, 87, 0, 0, 0, 0, 4, 91
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\FeedBackPage.jsx", "JavaScript JSX", 0, 0, 0, 21, 0, 0, 0, 4, 7, 32
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\HelpPage.jsx", "JavaScript JSX", 0, 0, 0, 21, 0, 0, 0, 4, 7, 32
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\HomePage.jsx", "JavaScript JSX", 0, 0, 0, 25, 0, 0, 0, 7, 8, 40
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\PolicyAndClausePage.jsx", "JavaScript JSX", 0, 0, 0, 21, 0, 0, 0, 4, 7, 32
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\SignInPage.jsx", "JavaScript JSX", 0, 0, 0, 22, 0, 0, 0, 0, 5, 27
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\SignInWithGooglePage.jsx", "JavaScript JSX", 0, 0, 0, 8, 0, 0, 0, 0, 9, 17
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\SignUpPage.jsx", "JavaScript JSX", 0, 0, 0, 15, 0, 0, 0, 0, 4, 19
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\StockMarketPage.jsx", "JavaScript JSX", 0, 0, 0, 21, 0, 0, 0, 4, 7, 32
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\src\pages\UserGuidePage.jsx", "JavaScript JSX", 0, 0, 0, 25, 0, 0, 0, 4, 7, 36
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\tailwind.config.js", "JavaScript", 279, 0, 0, 0, 0, 0, 0, 1, 16, 296
+"z:\trash\support-stock-investment-using-ai-and-fundamental-analysis\client\vite.config.js", "JavaScript", 5, 0, 0, 0, 0, 0, 0, 1, 2, 8
+"Total", "-", 327, 13, 6484, 1041, 1, 7, 27, 66, 205, 8171

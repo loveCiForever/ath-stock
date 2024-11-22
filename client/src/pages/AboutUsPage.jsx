@@ -11,6 +11,11 @@ const AboutUsPage = () => {
     document.title = "About Us";
   }, []);
 
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  }
+
   return (
     <div className='flex flex-col items-center justify-center min-w-[1450px]'>
       <Header toggleSideBar={toggleSideBar} />
