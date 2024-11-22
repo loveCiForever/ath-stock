@@ -26,9 +26,11 @@ const SignInForm = () => {
   };
   if (user) {
       console.log(user)
+      console.log("Sign in successful")
   };
   if (error) {
       console.log(error)
+      console.log("Sign in fail")
   };
 
   return (
@@ -46,18 +48,31 @@ const SignInForm = () => {
               className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-placeholder-text-color min-w-[350px]"
               name="email"
               placeholder="Enter your mail"
-              {...register("email", { required: true })}
+              {...register("email", 
+                { 
+                  required: true,
+                  validate: value => value.length >= 1 || "Email required"
+                }
+              )}
             />
+            {errors.email && <span className='ml-[3px] text-red-500 text-sm'>{errors.email.message}</span>}
           </div>
+
           <div className="mt-10px">
             <input
               type="password"
               className="w-full tracking-wide bg-placeholder-bg-color py-14px pl-20px mt-6px text-15px rounded-10px font-400 text-placeholder-text-color min-w-350"
               name="password"
               placeholder="Password"
-              {...register("password", { required: true })}
+              {...register("password", 
+                { 
+                  required: true,
+                  validate: value => value.length >= 1 || "Password required"
+                }
+              )}
             />
           </div>
+          {errors.password && <span className='ml-[3px] text-red-500 text-sm'>{errors.password.message}</span>}
 
           <div className="flex items-center justify-end mt-10px">
             <button
@@ -73,7 +88,9 @@ const SignInForm = () => {
           <div className="flex flex-col mt-20px">
             <button
               type="submit"
-              onClick={null}
+              onClick={() => {
+                console.log('Sign in button clicked')
+              }}
               className="py-14px rounded-xl bg-black
                     text-15px text-white font-400
                     tracking-wider
@@ -117,10 +134,11 @@ const SignInForm = () => {
                 Don't have an account?
               </div>
               <button
-                onClick={() => navigate('/signup')}
-                className="ml-3px font-500 text-14px text-black
-                  hover:text-black hover:underline
-                  active:scale-[.98] active:duration-75 transition-all tracking-wider"
+                onClick={() => {
+                  navigate('/signup')
+                  console.log("Sign up button clicked, navigate to SignUpPage")
+                }}
+                className="ml-3px font-500 text-14px text-black hover:text-black hover:underline active:scale-[.98] active:duration-75 transition-all tracking-wider"
               >
                 Sign up
               </button>
@@ -128,15 +146,6 @@ const SignInForm = () => {
           </div>
         </form>
       </div>
-
-
-      {null && (
-        <div className="flex items-center justify-center w-1/2 py-2 mx-auto mt-6 text-2xl font-semibold text-white bg-red-500 border-2 border-red-300 error rounded-xl">
-          {null}
-        </div>
-      )}
-
-
     </div>
   );
 };

@@ -22,48 +22,62 @@ const SignUpForm = () => {
 
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
   const onSubmit = data => {
-      console.log(data);
-      createUserWithEmailAndPassword(data.email, data.password);
-      console.log(user)
-      console.log(error)
+    console.log(data);
+    createUserWithEmailAndPassword(data.email, data.password);
+    console.log(user);
+    console.log(error);
   };
   if (user) {
-      console.log(user)
+    console.log(user);
+    console.log("Sign up successful");
   };
   if (error) {
-      console.log(error)
+    console.log(error);
+    console.log("Sign up failed");
   }
 
   return (
     <div className="w-full shadow-xs px-[25px] py-[30px]">
-
       <h1 className="text-start font-700 text-[30px]">Sign Up For Free</h1>
       <h2 className="tracking-wider text-start font-400 text-[15px] mt-[1px] text-placeholder-text-color">To continue with us, create an account.</h2>
-
       <div className="mt-[20px]">
         <form
           className="flex flex-col"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={
+            handleSubmit(onSubmit)
+          }
         >
           <div className="flex items-center justify-between">
-            <div className="">
+            <div>
               <input
                 type="text"
                 className="tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-900"
                 name="firstName"
                 placeholder="First Name"
-                {...register("firstName", { require: true })}
+                {...register("firstName", 
+                  {
+                    require: true,
+                    validate: value => value.length >= 1 || "First name is required"
+                  }
+                )}
               />
+              {errors.firstName && <span className='ml-[3px] text-red-500 text-sm'>{errors.firstName.message}</span>}
             </div>
 
-            <div className="">
+            <div className="ml-[10px]">
               <input
                 type="text"
-                className="tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
+                className=" tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
                 name="lastName"
                 placeholder="Last Name"
-                {...register("lastName", { require: true })}
+                {...register("lastName", 
+                  {
+                    require: true,
+                    validate: value => value.length >= 1 || "Last name is required"
+                  }
+                )}
               />
+              {errors.lastName && <span className='ml-[3px] text-red-500 text-sm'>{errors.lastName.message}</span>}
             </div>
           </div>
 
@@ -73,8 +87,14 @@ const SignUpForm = () => {
               className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
               name="email"
               placeholder="Email"
-              {...register("email", { require: true })}
+              {...register("email",
+                {
+                  require: true,
+                  validate: value => value.length >= 1 || "Email is required"
+                }
+              )}
             />
+            {errors.email && <span className='ml-[3px] text-red-500 text-sm'>{errors.email.message}</span>}
           </div>
 
           <div className="mt-10px">
@@ -83,8 +103,14 @@ const SignUpForm = () => {
               className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
               name="userName"
               placeholder="User name"
-              {...register("userName", { require: true })}
+              {...register("userName", 
+                {
+                  require: true,
+                  validate: value => value.length >= 1 || "User name is required"
+                }
+              )}
             />
+            {errors.userName && <span className='ml-[3px] text-red-500 text-sm'>{errors.userName.message}</span>}
           </div>
 
           <div className="mt-10px">
@@ -93,9 +119,15 @@ const SignUpForm = () => {
               className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
               name="password"
               placeholder="Password"
-              {...register("password", { require: true })}
+              {...register("password", 
+                {
+                  require: true,
+                  validate: value => value.length >= 6 || "Password should be at least 6 characters"
+                }
+              )}
             />
           </div>
+          {errors.password && <span className='ml-[3px] text-red-500 text-sm'>{errors.password.message}</span>}
 
           <div className='flex items-center justify-start mt-[10px]'>
             <input
@@ -111,7 +143,10 @@ const SignUpForm = () => {
 
           <div className="flex flex-col mt-[20px]">
             <button
-              onClick={null}
+              type='submit'
+              onClick={() => {
+                console.log("Sign up button clicked")
+              }}
               className="py-[14px] rounded-xl bg-black text-15px text-white font-400 tracking-wider hover:bg-gray-700 active:scale-[.98] active:duration-75 transition-all"
             >
               Sign up
@@ -143,15 +178,16 @@ const SignUpForm = () => {
                 Already have an account?
               </div>
               <button
-                onClick={() => navigate('/signin')}
+                onClick={() => {
+                  navigate('/signin')
+                  console.log("Sign in button clicked, navigate to SignInPage")
+                }}
                 className="ml-[3px] font-500 text-[14px] text-black hover:text-black hover:underline active:scale-[.98] active:duration-75 transition-all tracking-wider"
               >
                 Sign in
               </button>
             </div>
           </div>
-
-
         </form>
       </div>
     </div>
