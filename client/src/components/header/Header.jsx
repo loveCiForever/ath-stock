@@ -5,18 +5,24 @@ import { useNavigate } from "react-router-dom";
 import Branding from "./Branding";
 import SearchBarHead from "./SearchBarHead.jsx";
 import Account from './Account.jsx';
+import DropdownNotification from "./DropdownNotification.jsx";
 
 import HamburgerIcon from '../../assets/icon/hamburgerIcon.svg';
 import EmailUnRead from '../../assets/icon/emailUnRead.png';
 import LogInIcon from '../../assets/icon/logInIcon.png';
-// import notificationIcon from '../../assets/icon/notificationIcon.png';
 
-import userPicture from '../../assets/picture/userPicture.jpg';
+import SunIcon from '../../assets/icon/sunIcon.svg';
+import MoonIcon from '../../assets/icon/moonIcon.svg';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Header = ({ toggleSideBar }) => {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const location = useLocation();
+  const [notiIsOpen, setNotiIsOpen] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +36,25 @@ const Header = ({ toggleSideBar }) => {
     }
   }, []);
 
+  useEffect(() => {
+    const auth = getAuth();
+
+    const unsubsrcibe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsSignedIn(true);
+        setUser(user);
+      } else {
+        setIsSignedIn(false);
+        setUser(null);
+      }
+    });
+
+    return () => unsubsrcibe();
+  }, [])
+
   return (
     <header
-      className={`sticky top-0 z-20 h-[65px] pr-[20px] bg-white border-b border-gray-100 flex justify-between items-center mx-auto w-full px-2 transition-shadow duration-300 ${isScrolled ? "shadow-md shadow-gray-400" : ""}`}
+      className={`sticky top-0 z-50 h-[65px] pr-[20px] bg-white border-b border-gray-100 flex justify-between items-center mx-auto w-full px-2 transition-shadow duration-300 ${isScrolled ? "shadow-md shadow-gray-400" : ""}`}
     >
 
       {/* cụm hamburger + logo */}
@@ -40,7 +62,7 @@ const Header = ({ toggleSideBar }) => {
         <button
           className="p-3 hover:rounded-full hover:bg-orange-300 active:scale-[.90] active:duration-75 transition-all"
           onClick={() => {
-            console.log("Hamrburger icon clicked")
+            console.log("Hamrburger button clicked")
             toggleSideBar();
           }}
         >
@@ -53,43 +75,49 @@ const Header = ({ toggleSideBar }) => {
         <Branding />
       </div>
 
-      {/* Cụm searchbar */}
-      {/* {!isScrolled && !(
-        window.location.pathname === '/donate'
-        || window.location.pathname === '/help'
-        || window.location.pathname === '/feedback'
-        || window.location.pathname === '/policyandclause'
-        || window.location.pathname === '/aboutus'
-        || window.location.pathname === '/userguide'
-        || window.location.pathname === '/community'
-      ) ? <SearchBarHead /> : <div></div>} */}
 
-      {/* Cụm noti + profile */}
-      <div className="flex items-center ">
+      {/* Cụm theme switcher + noti + profile */}
+      <div className="flex items-center justify-center">
+
+        {/* Theme switch */}
+        {/* <div className="flex items-center justify-center mr-[17px] //mt-[8px] rounded-full p-2 hover:bg-orange-300">
+          <label className="swap swap-rotate">
+            <input type="checkbox" className="theme-controller" value="light" />
+            <svg
+              className="swap-off h-6 w-6 //fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24">
+              <path
+                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+            </svg>
+
+            <svg
+              className="swap-on h-6 w-6 //fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24">
+              <path
+                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+            </svg>
+          </label>
+        </div> */}
+
+        {/* Notify */}
         <button
           className="p-2 hover:rounded-full hover:bg-orange-300  active:scale-[.90] active:duration-75 transition-all"
           onClick={() => {
-            console.log("Notification button clicked")
+            // toggleNotiDropdown();
+            console.log("Notification button clicked");
           }}
         >
           <img
             src={EmailUnRead}
             className="w-6 opacity-100"
             alt="Notification" />
+
         </button>
 
-        {/* Sau cập nhật class user:  
-        - signed-> user avatar, click vào tùy chỉnh profile 
-        - ngược lại để avatar khách, click vào có tùy chọn login hoặc signup */}
-        {/* <div className="box-border flex flex-col items-center justify-center ml-4 border-4 border-orange-300 rounded-full">
-          <img 
-            src={userPicture} 
-            alt="User avatar" 
-            className="rounded-full w-9"
-            style={{boxSizing: 'border-box'}}
-          />
-        </div> */}
 
+        {/* Nếu như đã signin -> account google, chưa thì signin */}
         <div className="flex flex-col items-center justify-center ml-[15px]">
           {isSignedIn ? (
             <Account user={user} />
@@ -102,17 +130,12 @@ const Header = ({ toggleSideBar }) => {
                   navigate('/signin');
                 }}
               >
-                {/* <img 
-                  src={LogInIcon} 
-                  alt="login"
-                  className="w-6" 
-                /> */}
                 <p className="ml-[0px] mb-[5px] font-semibold tracking-tight">Sign in</p>
               </button>
-
             </div>
           )}
         </div>
+
       </div>
     </header>
   );

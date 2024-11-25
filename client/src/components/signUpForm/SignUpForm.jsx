@@ -37,9 +37,9 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="w-full shadow-xs px-[25px] py-[30px]">
-      <h1 className="text-start font-700 text-[30px]">Sign Up For Free</h1>
-      <h2 className="tracking-wider text-start font-400 text-[15px] mt-[1px] text-placeholder-text-color">To continue with us, create an account.</h2>
+    <div className="w-full shadow-xs px-[20px] py-[30px] min-w-[350px]">
+      <h1 className="text-start font-bold text-[30px]">Sign Up For Free</h1>
+      <h2 className="tracking-wider text-start font-normal text-[15px] mt-[1px] text-placeholder-text-color">To continue with us, create an account.</h2>
       <div className="mt-[20px]">
         <form
           className="flex flex-col"
@@ -51,7 +51,7 @@ const SignUpForm = () => {
             <div>
               <input
                 type="text"
-                className="tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-900"
+                className="tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-normal text-gray-900"
                 name="firstName"
                 placeholder="First Name"
                 {...register("firstName", 
@@ -67,7 +67,7 @@ const SignUpForm = () => {
             <div className="ml-[10px]">
               <input
                 type="text"
-                className=" tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
+                className=" tracking-wide bg-placeholder-bg-color w-full py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-normal text-gray-700"
                 name="lastName"
                 placeholder="Last Name"
                 {...register("lastName", 
@@ -81,10 +81,10 @@ const SignUpForm = () => {
             </div>
           </div>
 
-          <div className="mt-10px">
+          <div className="mt-[10px]">
             <input
               type="email"
-              className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
+              className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-normal text-gray-700"
               name="email"
               placeholder="Email"
               {...register("email",
@@ -97,10 +97,10 @@ const SignUpForm = () => {
             {errors.email && <span className='ml-[3px] text-red-500 text-sm'>{errors.email.message}</span>}
           </div>
 
-          <div className="mt-10px">
+          <div className="mt-[10px]">
             <input
               type="text"
-              className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
+              className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-normal text-gray-700"
               name="userName"
               placeholder="User name"
               {...register("userName", 
@@ -113,10 +113,10 @@ const SignUpForm = () => {
             {errors.userName && <span className='ml-[3px] text-red-500 text-sm'>{errors.userName.message}</span>}
           </div>
 
-          <div className="mt-10px">
+          <div className="mt-[10px]">
             <input
               type="password"
-              className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-400 text-gray-700"
+              className="w-full tracking-wide bg-placeholder-bg-color py-[14px] pl-[20px] mt-[6px] text-[15px] rounded-[10px] font-normal text-gray-700"
               name="password"
               placeholder="Password"
               {...register("password", 
@@ -163,18 +163,18 @@ const SignUpForm = () => {
                 type='submit'
               >
                 <img src={googleLogo} />
-                <h1 className="ml-10px text-14px font-500">Sign in with Google</h1>
+                <h1 className="ml-[10px] text-[14px] font-normal">Sign in with Google</h1>
               </button>
               <button
                 className="flex content-center items-center justify-center border-2 border-gray-200 py-3 rounded-xl mt-[10px] bg-white text-black font-normal hover:bg-gray-100 active:scale-[.98] active:duration-75 transition-all "
               >
                 <img src={githubLogo} />
-                <h1 className="ml-[10px] text-[14px] font-500">Sign in with Github </h1>
+                <h1 className="ml-[10px] text-[14px] font-normal">Sign in with Github </h1>
               </button>
             </div>
 
             <div className="flex items-center content-center justify-center mt-[10px]">
-              <div className="tracking-wider text-[14px] font-400">
+              <div className="tracking-wider text-[14px] font-normal">
                 Already have an account?
               </div>
               <button
@@ -182,7 +182,7 @@ const SignUpForm = () => {
                   navigate('/signin')
                   console.log("Sign in button clicked, navigate to SignInPage")
                 }}
-                className="ml-[3px] font-500 text-[14px] text-black hover:text-black hover:underline active:scale-[.98] active:duration-75 transition-all tracking-wider"
+                className="ml-[3px] font-semibold text-[14px] text-black hover:text-black hover:underline active:scale-[.98] active:duration-75 transition-all tracking-wider"
               >
                 Sign in
               </button>

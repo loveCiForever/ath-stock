@@ -7,3 +7,9 @@
 button {
   @apply cursor-pointer;
 }
+
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+  .hidden-on-small {
+    display: none;
+  }
+}

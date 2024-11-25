@@ -13,33 +13,13 @@ import SettingIcon from '../../assets/icon/settingIcon.png';
 import FeedBackIcon from '../../assets/icon/feedbackIcon.png';
 import CloseIcon from '../../assets/icon/closeIcon.png';
 
-import OutSideOfSideBarClick from './OutSideOfSideBarClick';
-
 const SideBar = ({ toggleSideBar }) => {
   const sidebarRef = useRef(null);
   const navigate = useNavigate();
-  // const sideBarOutSideClick = OutSideOfSideBarClick(sidebarRef);
-  // const [currentPath, setCurrentPath] = useState(window.location.pathname);
-
-  // useEffect(() => {
-  //   const handlePathChange = () => {
-  //     setCurrentPath(window.location.pathname);
-  //   };
-
-  //   window.addEventListener('popstate', handlePathChange);
-
-  //   return () => {
-  //     window.removeEventListener('popstate', handlePathChange);
-  //   };
-  // }, []);
-  // console.log(toggleSideBar(false));
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if ((sidebarRef.current && !sidebarRef.current.contains(event.target))) {
-        console.log("Click outside detected");
-        toggleSideBar(false);
-      }
+      (!sidebarRef.current && sidebarRef.current.contains(event.target)) ? (toggleSideBar(false)) : (null)
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -49,25 +29,15 @@ const SideBar = ({ toggleSideBar }) => {
   }, [toggleSideBar]);
 
   const closeBar = () => toggleSideBar(false);
-  const isActive = (path) => currentPath === path ? 'bg-orange-200' : 'bg-orange-000';
+
   return (
     <aside
       ref={sidebarRef}
-      className="fixed inset-0 z-50 mt-[65px] flex transition ease-in-out"
+      className="fixed inset-0 z-0 mt-[0px] flex transition ease-in-out"
     >
       <div className="w-64 bg-white shadow-xl relative pr-[10px]">
-        {/* {sideBarOutSideClick ? {closeBar} : null} */}
-        {/* {sideBarOutSideClick && closeBar()} */}
-        {/* <div className='flex items-center justify-center'>
-          <div className="mt-[20px] mr-[32px] text-2xl font-bold font-inter">
-            <Branding />
-            
-          </div>
-        </div> */}
-
-
-        <nav className="mt-0">
-          <div className="flex flex-col text-[14px] tracking-wide pr-[30px]">
+        <nav className="mt-[80px]">
+          <div className="flex flex-col text-[14px] tracking-wide pr-[30px] mb-[20px]">
             <button
               className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
               onClick={() => {
@@ -125,20 +95,30 @@ const SideBar = ({ toggleSideBar }) => {
 
           <div className="flex flex-col uppercase text-gray-600 text-[11px] font-medium ml-6 mr-[8px]">
             <div className="flex items-center justify-between">
-              <a href="#" rel="noopener noreferrer">
+              <a 
+                href="#" 
+                rel="noopener noreferrer">
                 Portfolios
               </a>
               <div className="flex items-center p-2 ml-1 rounded-full hover:bg-gray-100 shadow-gray-400">
-                <img src={PlusIcon} className="h-[26px] w-[26px]" alt="Add" />
+                <img 
+                  src={PlusIcon} 
+                  className="h-[26px] w-[26px]" 
+                  alt="Add" />
               </div>
             </div>
 
             <div className="flex items-center justify-between">
-              <a href="#" rel="noopener noreferrer">
+              <a 
+                href="#" 
+                rel="noopener noreferrer">
                 Watchlists
               </a>
               <div className="flex items-center p-2 ml-1 rounded-full hover:bg-gray-100 shadow-gray-400">
-                <img src={PlusIcon} className="h-[26px] w-[26px]" alt="Add" />
+                <img 
+                  src={PlusIcon} 
+                  className="h-[26px] w-[26px]" 
+                  alt="Add" />
               </div>
             </div>
           </div>
@@ -155,35 +135,50 @@ const SideBar = ({ toggleSideBar }) => {
           <div className="mt-[12px] text-[14px]">
             <a className="flex items-center py-3 pl-6 rounded-r-full hover:bg-gray-100">
               <span className="flex items-center justify-center w-6 h-6 bg-green-100 rounded-lg">
-                <img src={UpArrowIcon} className="w-4 h-4" alt="Up" />
+                <img 
+                  src={UpArrowIcon} 
+                  className="w-4 h-4"
+                  alt="Up" />
               </span>
               <span className="pl-[14px] flex-grow">Bper Banca SpA</span>
               <span className="pr-2 text-green-700">+1.11%</span>
             </a>
             <a className="flex items-center py-3 pl-6 rounded-r-full hover:bg-gray-100">
               <span className="flex items-center justify-center w-6 h-6 bg-green-100 rounded-lg">
-                <img src={UpArrowIcon} className="w-4 h-4" alt="Up" />
+                <img 
+                  src={UpArrowIcon} 
+                  className="w-4 h-4" 
+                  alt="Up" />
               </span>
               <span className="pl-[14px] flex-grow">Bper Banca SpA</span>
               <span className="pr-2 text-green-700">+1.11%</span>
             </a>
             <a className="flex items-center py-3 pl-6 rounded-r-full hover:bg-gray-100">
               <span className="flex items-center justify-center w-6 h-6 bg-green-100 rounded-lg">
-                <img src={UpArrowIcon} className="w-4 h-4" alt="Up" />
+                <img 
+                  src={UpArrowIcon} 
+                  className="w-4 h-4" 
+                  alt="Up" />
               </span>
               <span className="pl-[14px] flex-grow">Bper Banca SpA</span>
               <span className="pr-2 text-green-700">+1.11%</span>
             </a>
             <a className="flex items-center py-3 pl-6 rounded-r-full hover:bg-gray-100">
               <span className="flex items-center justify-center w-6 h-6 bg-green-100 rounded-lg">
-                <img src={UpArrowIcon} className="w-4 h-4" alt="Up" />
+                <img 
+                  src={UpArrowIcon} 
+                  className="w-4 h-4" 
+                  alt="Up" />
               </span>
               <span className="pl-[14px] flex-grow">Bper Banca SpA</span>
               <span className="pr-2 text-green-700">+1.11%</span>
             </a>
             <a className="flex items-center py-3 pl-6 rounded-r-full hover:bg-gray-100">
               <span className="flex items-center justify-center w-6 h-6 bg-green-100 rounded-lg">
-                <img src={UpArrowIcon} className="w-4 h-4" alt="Up" />
+                <img 
+                  src={UpArrowIcon} 
+                  className="w-4 h-4" 
+                  alt="Up" />
               </span>
               <span className="pl-[14px] flex-grow">Bper Banca SpA</span>
               <span className="pr-2 text-green-700">+1.11%</span>
@@ -191,36 +186,27 @@ const SideBar = ({ toggleSideBar }) => {
           </div>
           <div className="absolute bottom-[18px] pt-[10px] border-t w-full mr-[10px] text-[14px]">
             <button className="flex items-center mt-2 py-2 pr-[104px] pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full">
-              <img src={SettingIcon} className="w-6 h-6" alt="Market Trends" />
+              <img 
+                src={SettingIcon} 
+                className="w-6 h-6" 
+                alt="Market Trends" />
               <span className="pl-[14px] pb-[1px] font-semibold">Settings</span>
             </button>
             <button 
               className={`flex items-center mt-2 py-2 pr-[60px] pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/feedback' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
               onClick={() => {
                 navigate('/feedback');
-                console.log("Send feedback clicked")
+                console.log("Send feedback clicked, navigate to Feedback page")
               }}
             >
-              <img src={FeedBackIcon} className="w-6 h-6" alt="Market Trends" />
+              <img 
+                src={FeedBackIcon} 
+                className="w-6 h-6" 
+                alt="Market Trends" />
               <span className="pl-[14px] pb-[3px] font-semibold">Send Feedback</span>
             </button>
           </div>
         </nav>
-      </div>
-
-      <div className='mt-[16px]'>
-        <button
-          onClick={() => {
-            console.log("Close sidebar button clicked");
-            closeBar();
-          }}
-          className=' bg-orange-100 hover:bg-orange-300 rounded-tr-full rounded-br-full flex items-center justify-center pl-2 pr-3 py-2 active:scale-[.90] active:duration-75 transition-all'
-        >
-          <img
-            src={CloseIcon}
-            alt="close"
-            className='w-4' />
-        </button>
       </div>
 
     </aside>
