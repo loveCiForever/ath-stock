@@ -1,40 +1,56 @@
 
-import React, { useState } from 'react';
-import { useNavigate, Link } from "react-router-dom";
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { auth } from '../../auth/firebase.jsx';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from '../../auth/firebase.jsx';
 
-import googleLogo from '../../assets/logo/googleLogo.svg';
 import githubLogo from '../../assets/logo/githubLogo.svg';
+import googleLogo from '../../assets/logo/googleLogo.svg';
 
 
 const SignUpForm = () => {
   const navigate = useNavigate();
 
-  const [
-    createUserWithEmailAndPassword,
-    user,
-    loading,
-    error,
-  ] = useCreateUserWithEmailAndPassword(auth);
-
+  const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+
   const onSubmit = data => {
     console.log(data);
     createUserWithEmailAndPassword(data.email, data.password);
     console.log(user);
     console.log(error);
   };
-  if (user) {
-    console.log(user);
-    console.log("Sign up successful");
-  };
-  if (error) {
-    console.log(error);
-    console.log("Sign up failed");
-  }
+
+  useEffect(() => {
+    if (user) {
+      toast.success('Sign up successful!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
+      setTimeout(() => { navigate('/signin'); }, 3000);
+    }
+    if (error) {
+      toast.error('Sign up failed. Please check your credentials.', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [user, error, navigate]);
 
   return (
     <div className="w-full shadow-xs px-[20px] py-[30px] min-w-[350px]">
@@ -140,6 +156,8 @@ const SignUpForm = () => {
               for="remember">I agree to all Terms, Privacy and Fees
             </label>
           </div>
+
+          <ToastContainer />
 
           <div className="flex flex-col mt-[20px]">
             <button

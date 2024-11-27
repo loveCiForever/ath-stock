@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Header from '../components/header/Header.jsx';
 import Footer from '../components/footer/Footer.jsx';
 import SideBar from '../components/sideBar/SideBar.jsx';
-import SearchBarHead from '../components/header/SearchBarHead.jsx';
+import SearchBar from '../components/searchBar/SearchBar.jsx';
 
 // import Markets from '../components/marketSection/Markets.jsx';
 // import MainSection from '../components/mainSection/MainSection.jsx';
@@ -21,12 +21,13 @@ const HomePage = () => {
 
   return (
     <div className='flex flex-col items-center justify-center min-w-[1450px]'>
+
       <Header toggleSideBar={toggleSideBar} />
-      {/* isSideBarOpen true thì render SideBar và ngược lại */}
-      {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />}
-      <SearchBarHead />
-      {/* <div className="flex flex-col items-center"><Markets /></div> */}
-      {/* <MainSection /> */}
+
+      {isSideBarOpen ? <SideBar toggleSideBar={toggleSideBar}/> : ''}
+
+      <SearchBar />
+
       <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-000">
         Home Page
       </div>

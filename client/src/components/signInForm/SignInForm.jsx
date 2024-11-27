@@ -24,6 +24,7 @@ const SignInForm = () => {
   // Thông báo đăng nhập thành công hoặc không
   useEffect(() => {
     if (user) {
+      console.log("Sign in successful!", user);
       toast.success('Sign in successful!', {
         position: "top-center",
         autoClose: 3000,
@@ -37,6 +38,7 @@ const SignInForm = () => {
       setTimeout(() => { navigate('/'); }, 3000);
     }
     if (error) {
+      console.error("Sign in successful!", error);
       toast.error('Sign in failed. Please check your credentials.', {
         position: "top-center",
         autoClose: 3000,
@@ -64,6 +66,11 @@ const SignInForm = () => {
           toast.success('Sign in successful!', {
             position: "top-center",
             autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
           });
           setTimeout(() => { navigate('/'); }, 3000);
         }
@@ -72,6 +79,11 @@ const SignInForm = () => {
         toast.error('Google Sign-In Failed', {
           position: "top-center",
           autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
         });
       }
     };

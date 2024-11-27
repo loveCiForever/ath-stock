@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Branding from '../header/Branding';
+import Branding from '../branding/Branding.jsx';
 
 import HamburgerIcon from '../../assets/icon/hamburgerIcon.svg';
 import HomeIcon from '../../assets/icon/homeIcon.png';

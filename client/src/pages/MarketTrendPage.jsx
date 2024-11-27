@@ -5,7 +5,6 @@ import Header from '../components/header/Header.jsx';
 import Footer from '../components/footer/Footer.jsx';
 import SideBar from '../components/sideBar/SideBar.jsx';
 
-
 const MarketTrendPage = () => {
   useEffect(() => {
     document.title = "Market Trend";
