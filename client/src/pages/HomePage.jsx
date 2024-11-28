@@ -5,8 +5,8 @@ import Header from '../components/header/Header.jsx';
 import Footer from '../components/footer/Footer.jsx';
 import SideBar from '../components/sideBar/SideBar.jsx';
 import SearchBar from '../components/searchBar/SearchBar.jsx';
+import Market from '../components/market/Market.jsx';
 
-// import Markets from '../components/marketSection/Markets.jsx';
 // import MainSection from '../components/mainSection/MainSection.jsx';
 
 const HomePage = () => {
@@ -20,12 +20,14 @@ const HomePage = () => {
   }
 
   return (
-    <div className='flex flex-col items-center justify-center min-w-[1450px]'>
+    <div className='flex flex-col items-center justify-center min-w-[1450px] bg-gray-50'>
 
       <Header toggleSideBar={toggleSideBar} />
 
       {isSideBarOpen ? <SideBar toggleSideBar={toggleSideBar}/> : ''}
-
+      <div className='flex flex-col items-center'>
+        <Market />
+      </div>
       <SearchBar />
 
       <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-000">

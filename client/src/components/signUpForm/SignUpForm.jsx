@@ -18,11 +18,9 @@ const SignUpForm = () => {
   const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
-  const onSubmit = data => {
-    console.log(data);
-    createUserWithEmailAndPassword(data.email, data.password);
-    console.log(user);
-    console.log(error);
+  const onSubmit = async (data) => {
+    const { email, password } = data;
+    await createUserWithEmailAndPassword(auth, email, password);
   };
 
   useEffect(() => {
