@@ -17,8 +17,13 @@ button {
 
 body {
   @apply font-sans; /* This applies the default sans font (Roboto) */
+  font-family: 'Google Sans', sans-serif;
 }
 
 body {
   overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.may-be-you-care {
+  font-family: 'Google Sans', sans-serif;
 }

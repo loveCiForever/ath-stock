@@ -9,6 +9,7 @@ import Market from '../components/market/Market.jsx';
 
 import MainSection from '../components/mainSection/MainSection.jsx';
 import MayBeYouCare from '../components/mayBeYouCare/MayBeYouCare.jsx';
+import MayBeYouCares from '../components/mayBeYouCare/MayBeYouCareCards.jsx';
 
 const HomePage = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const HomePage = () => {
   return (
     <div className='flex-col items-center justify-center min-h-screen min-w-[1000px] bg-yellow-000'>
 
-      <div className='fixed inset-x-0 top-0 z-50 min-w-[1000px] bg-red-000'>
+      <div className='fixed inset-x-0 top-0 z-1 min-w-[1000px] bg-red-000'>
         <Header toggleSideBar={toggleSideBar} />
       </div>
     
@@ -42,8 +43,10 @@ const HomePage = () => {
         <MayBeYouCare/>
       </div>
       
+      {/* <MayBeYouCares/> */}
       
-      <div className='fixed inset-x-0 bottom-0 z-0 flex items-center justify-center px-10 min-w-[800px]'>
+      
+      <div className='fixed inset-x-0 bottom-0 z-2 flex items-center justify-center px-10 min-w-[800px]'>
         <Footer toggleSideBar={toggleSideBar} />
       </div>
       

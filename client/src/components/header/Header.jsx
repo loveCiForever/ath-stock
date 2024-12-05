@@ -41,34 +41,36 @@ const Header = ({ toggleSideBar }) => {
 
   return (
     <header
-      className={`sticky h-[65px] pr-[20px] bg-white border-b border-gray-100 flex justify-between items-center w-full transition-shadow duration-300 ${isScrolled ? 
+      className={`sticky h-[65px] bg-white border-b-0 border-gray-100 flex-col w-full transition-shadow duration-300 ${isScrolled ? 
         ("shadow-md shadow-gray-400") : ("null")}
       `}
     >
 
+      <div className="flex items-center justify-between w-full h-full">
       {/* cụm hamburger + logo */}
-      <div className="flex items-center justify-center">
-        <div className="ml-4">
-          <Hamburger toggleSideBar={toggleSideBar} />
+        <div className="flex items-center justify-center bg-red-000">
+          <div className="ml-4">
+            <Hamburger toggleSideBar={toggleSideBar} />
+          </div>
+          
+          <div className="ml-4">
+            <Branding />
+          </div>      
         </div>
+
+        {/* Cụm theme switcher + noti + profile */}
+        <div className="flex items-center justify-center mr-5 bg-red-000">
+          <div className="mr-4">
+            <Notification />
+          </div>
         
-        <div className="ml-4">
-          <Branding />
+
+          <div className="mr-3">
+            {isSignedIn ? (<Account user={user} />) : (<SignInButton />)}
+          </div>
         </div>
-        
       </div>
 
-      {/* Cụm theme switcher + noti + profile */}
-      <div className="flex items-center justify-center">
-        <div className="mr-4">
-          <Notification />
-        </div>
-       
-
-        <div className="mr-3">
-          {isSignedIn ? (<Account user={user} />) : (<SignInButton />)}
-        </div>
-      </div>
 
     </header>
   );
