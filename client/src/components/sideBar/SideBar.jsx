@@ -33,26 +33,29 @@ const SideBar = ({ toggleSideBar }) => {
   return (
     <aside
       ref={sidebarRef}
-      className="fixed inset-0 z-0 mt-[0px] flex transition ease-in-out"
+      className="fixed inset-0 z-0 flex transition ease-in-out"
     >
-      <div className="w-64 bg-white shadow-xl relative pr-[10px]">
+      <div className="w-60 bg-white shadow-xl relative pr-[0px]">
         <nav className="mt-[80px]">
           <div className="flex flex-col text-[14px] tracking-wide pr-[30px] mb-[20px]">
             <button
               className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
               onClick={() => {
                 navigate('/');
-                console.log("Home button click, navigate to home page")
+                // console.log("Home button click, navigate to home page")
               }}
             >
-              <img src={HomeIcon} className="w-6" alt="Home" />
+              <img 
+                src={HomeIcon} 
+                className="w-6" 
+                alt="Home" />
               <span className="pl-[14px] pb-[1px]">Home</span>
             </button>
             <button
               className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/markettrend' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
               onClick={() => {
                 navigate('/markettrend');
-                console.log("Market trend button click, navigate to market trend page")
+                // console.log("Market trend button click, navigate to market trend page")
               }}
             >
               <img
@@ -66,7 +69,7 @@ const SideBar = ({ toggleSideBar }) => {
               className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/community' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
               onClick={() => {
                 navigate('/community');
-                console.log("Community button click, navigate to Community page")
+                // console.log("Community button click, navigate to Community page")
               }}
             >
               <img
@@ -80,7 +83,7 @@ const SideBar = ({ toggleSideBar }) => {
               className={`flex items-center mt-2 py-2 pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/userguide' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
               onClick={() => {
                 navigate('/userguide');
-                console.log("User guide button click, navigate to user guide page")
+                // console.log("User guide button click, navigate to user guide page")
               }}
             >
               <img
@@ -91,9 +94,10 @@ const SideBar = ({ toggleSideBar }) => {
               <span className="pl-[14px]">User Guide</span>
             </button>
           </div>
-          <div className="border-b border-gray-200 my-[10px]"></div>
+          <div className="border-b border-gray-200 my-[0px]"></div>
+          {/* <hr className="flex w-full h-[1.4px] mb-10 bg-gray-300" /> */}
 
-          <div className="flex flex-col uppercase text-gray-600 text-[11px] font-medium ml-6 mr-[8px]">
+          {/* <div className="flex flex-col uppercase text-gray-600 text-[11px] font-medium ml-6 mr-[8px]">
             <div className="flex items-center justify-between">
               <a 
                 href="#" 
@@ -123,16 +127,19 @@ const SideBar = ({ toggleSideBar }) => {
             </div>
           </div>
 
-          <div className="border-b border-gray-200 my-[10px]"></div>
+          <div className="border-b border-gray-200 my-[10px]"></div> */}
 
-          <a
+
+
+
+          {/* <a
             href="#"
             className="uppercase text-gray-700 tracking-wider text-[11px] space-y-[6px] pt-[10px] ml-6"
             rel="noopener noreferrer"
           >
             Most Active
-          </a>
-          <div className="mt-[12px] text-[14px]">
+          </a> */}
+          {/* <div className="mt-[12px] text-[14px]">
             <a className="flex items-center py-3 pl-6 rounded-r-full hover:bg-gray-100">
               <span className="flex items-center justify-center w-6 h-6 bg-green-100 rounded-lg">
                 <img 
@@ -183,14 +190,17 @@ const SideBar = ({ toggleSideBar }) => {
               <span className="pl-[14px] flex-grow">Bper Banca SpA</span>
               <span className="pr-2 text-green-700">+1.11%</span>
             </a>
-          </div>
-          <div className="absolute bottom-[18px] pt-[10px] border-t w-full mr-[10px] text-[14px]">
+          </div> */}
+
+
+          
+          <div className="absolute bottom-[10px] pt-[10px] border-t w-full mr-[10px] text-[14px]">
             <button className="flex items-center mt-2 py-2 pr-[104px] pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full">
               <img 
                 src={SettingIcon} 
                 className="w-6 h-6" 
                 alt="Market Trends" />
-              <span className="pl-[14px] pb-[1px] font-semibold">Settings</span>
+              <span className="pl-[14px] pb-[1px] font-medium">Settings</span>
             </button>
             <button 
               className={`flex items-center mt-2 py-2 pr-[60px] pl-6 text-black-700 bg-orange-000 hover:bg-orange-100 rounded-r-full ${window.location.pathname === '/feedback' ? 'bg-orange-300 hover:bg-orange-300' : 'bg-orange-000'}`}
@@ -203,9 +213,11 @@ const SideBar = ({ toggleSideBar }) => {
                 src={FeedBackIcon} 
                 className="w-6 h-6" 
                 alt="Market Trends" />
-              <span className="pl-[14px] pb-[3px] font-semibold">Send Feedback</span>
+              <span className="pl-[14px] pb-[3px] font-medium">Send Feedback</span>
             </button>
           </div>
+
+          
         </nav>
       </div>
 

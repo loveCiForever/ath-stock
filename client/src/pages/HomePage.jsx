@@ -7,11 +7,13 @@ import SideBar from '../components/sideBar/SideBar.jsx';
 import SearchBar from '../components/searchBar/SearchBar.jsx';
 import Market from '../components/market/Market.jsx';
 
-// import MainSection from '../components/mainSection/MainSection.jsx';
+import MainSection from '../components/mainSection/MainSection.jsx';
+import MayBeYouCare from '../components/mayBeYouCare/MayBeYouCare.jsx';
 
 const HomePage = () => {
   useEffect(() => {
     document.title = "Home Page";
+    console.log(`Width: ${window.innerWidth}, Height: ${window.innerHeight}`);
   }, []);
 
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -19,22 +21,32 @@ const HomePage = () => {
     setIsSideBarOpen(!isSideBarOpen);
   }
 
+  
   return (
-    <div className='flex flex-col items-center justify-center min-w-[1450px] bg-gray-50'>
+    <div className='flex-col items-center justify-center min-h-screen min-w-[1000px] bg-yellow-000'>
 
-      <Header toggleSideBar={toggleSideBar} />
-
+      <div className='fixed inset-x-0 top-0 z-50 min-w-[1000px] bg-red-000'>
+        <Header toggleSideBar={toggleSideBar} />
+      </div>
+    
       {isSideBarOpen ? <SideBar toggleSideBar={toggleSideBar}/> : ''}
-      <div className='flex flex-col items-center'>
+
+      <div className='flex items-center justify-center w-auto mt-20'>
         <Market />
       </div>
+      
       <SearchBar />
-
-      <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-000">
-        Home Page
+      
+      <div className='flex items-center justify-center bg-red-000'>
+        {/* <MainSection /> */}
+        <MayBeYouCare/>
       </div>
-
-      <Footer/>
+      
+      
+      <div className='fixed inset-x-0 bottom-0 z-0 flex items-center justify-center px-10 min-w-[800px]'>
+        <Footer toggleSideBar={toggleSideBar} />
+      </div>
+      
     </div>
   );
 }

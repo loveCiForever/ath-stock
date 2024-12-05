@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {  
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        sans: ['Roboto', 'Arial', 'sans-serif'],
       },
 
       backgroundColor: {

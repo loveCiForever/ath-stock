@@ -10,20 +10,22 @@ const MarketCard = ({ name, percentage, priceChange, currentPrice, isUp }) => {
         <img
           src={isUp ? UpArrowIcon : DownArrowIcon}
           alt={isUp ? "Up Arrow" : "Down Arrow"}
-          className="h-4 w-4 opacity-70"
+          className="w-4 h-4 opacity-100"
         />
       </div>
 
       <div className="flex flex-col flex-grow ml-2">
         <div className="flex flex-row items-center justify-between">
-          <div className="text-gray-800 font-bold text-xs mr-2">{name}</div>
+          <div className="mr-2 text-xs font-bold text-gray-800">
+            {name}
+          </div>
           <div className={`text-xs ${isUp ? "text-green-700" : "text-red-700"}`}>
             {percentage}%
           </div>
         </div>
 
         <div className="flex flex-row items-center justify-between">
-          <div className="text-gray-600 text-xs">{currentPrice}</div>
+          <div className="text-xs text-gray-600">{currentPrice}</div>
           <div className={`text-xs mr-1 ${isUp ? "text-green-600" : "text-red-600"}`}>
             {priceChange}
           </div>

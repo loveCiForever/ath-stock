@@ -7,56 +7,51 @@ export default function Footer() {
   const navigate = useNavigate();
 
   return (
-    <div className='flex items-center justify-center w-auto h-32 bg-red-00'>
-      <div className='flex flex-col items-center justify-center w-full bg-red-000 mx-72'>
-        <hr className="flex w-full h-[1.2px] mb-5 bg-gray-300" />
-        <div className='flex my-5'>
+    <footer className='sticky bottom-0 z-50 flex-col pb-10 mt-10 w-[900px] bg-white'>
+
+      <hr className="flex w-full h-[1.4px] mb-10 bg-gray-300" />
+      <div className='flex items-center justify-between w-full'>
+
+        <div className=''>
           <Branding />
-
-          <button
-            className='ml-20 text-gray-500 text-[17px] font-500 hover:text-gray-900 hover:shadow-xs active:scale-[.98] active:duration-75 transition-all'
-            onClick={() => {
-              navigate('/help')
-            }}
-          >Help
-          </button>
-
-          <button
-            className='ml-20 text-gray-500 text-[17px] font-500 hover:text-gray-900 hover:shadow-xs active:scale-[.98] active:duration-75 transition-all'
-            onClick={() => {
-              navigate('/feedback')
-            }}
-          >Feedback
-          </button>
-
-          <button
-            className='ml-20 text-gray-500 text-[17px] font-500 hover:text-gray-900 hover:shadow-xs active:scale-[.98] active:duration-75 transition-all'
-            onClick={() => {
-              navigate('/policyandclause')
-            }}
-          >Policy & Clause
-          </button>
-
-          <button
-            className='ml-20 text-gray-500 text-[17px] font-500 hover:text-gray-900 hover:shadow-xs active:scale-[.98] active:duration-75 transition-all'
-            onClick={() => {
-              navigate('/aboutus')
-            }}
-          >About Us
-          </button>
-
-          <button
-            className='ml-20 text-gray-500 text-[17px] font-500 hover:text-gray-900 hover:shadow-xs active:scale-[.98] active:duration-75 transition-all'
-            onClick={() => {
-              navigate('/donate')
-            }}
-          >
-            Donate
-          </button>
-
         </div>
-        
+
+        <button
+          className='text-gray-500 text-[17px] hover:text-gray-900 hover:shadow-xs hover:text-[20px] hover:font-medium active:scale-[.98] active:duration-75 transition-all bg-blue-00'
+          onClick={() => {
+            navigate('/feedback')
+          }}
+        >Feedback
+        </button>
+
+        <button
+          className='text-gray-500 text-[17px] hover:text-gray-900 hover:shadow-xs hover:text-[20px] hover:font-medium active:scale-[.98] active:duration-75 transition-all bg-blue-00'
+          onClick={() => {
+            navigate('/policyandclause')
+          }}
+        >Policy & Clause
+        </button>
+
+        <button
+          className='text-gray-500 text-[17px] hover:text-gray-900 hover:shadow-xs hover:text-[20px] hover:font-medium active:scale-[.98] active:duration-75 transition-all bg-blue-00'
+          onClick={() => {
+            navigate('/aboutus')
+          }}
+        >About Us
+        </button>
+
+        <button
+          className='text-gray-500 text-[17px] hover:text-gray-900 hover:shadow-xs hover:text-[20px] hover:font-medium active:scale-[.98] active:duration-75 transition-all bg-blue-00'
+          onClick={() => {
+            navigate('/donate')
+          }}
+        >
+          Donate
+        </button>
+
       </div>
-    </div>
+
+    </footer>
+
   );
 }

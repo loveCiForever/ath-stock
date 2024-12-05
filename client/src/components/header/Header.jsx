@@ -41,22 +41,31 @@ const Header = ({ toggleSideBar }) => {
 
   return (
     <header
-      className={`sticky top-0 z-50 h-[65px] pr-[20px] bg-white border-b border-gray-100 flex justify-between items-center mx-auto w-full px-2 transition-shadow duration-300 ${isScrolled ? "shadow-md shadow-gray-400" : ""}`}
+      className={`sticky h-[65px] pr-[20px] bg-white border-b border-gray-100 flex justify-between items-center w-full transition-shadow duration-300 ${isScrolled ? 
+        ("shadow-md shadow-gray-400") : ("null")}
+      `}
     >
 
       {/* cụm hamburger + logo */}
       <div className="flex items-center justify-center">
-        <Hamburger toggleSideBar={toggleSideBar} />
-        <Branding />
+        <div className="ml-4">
+          <Hamburger toggleSideBar={toggleSideBar} />
+        </div>
+        
+        <div className="ml-4">
+          <Branding />
+        </div>
+        
       </div>
 
       {/* Cụm theme switcher + noti + profile */}
       <div className="flex items-center justify-center">
-        {/* Notification */}
-        <Notification />
+        <div className="mr-4">
+          <Notification />
+        </div>
+       
 
-        {/* User avatar*/}
-        <div className="ml-[15px]">
+        <div className="mr-3">
           {isSignedIn ? (<Account user={user} />) : (<SignInButton />)}
         </div>
       </div>

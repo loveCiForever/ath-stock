@@ -5,7 +5,7 @@ const Branding = () => {
   const navigate = useNavigate();
   return (
     <button 
-      className="flex items-center justify-center ml-3 active:scale-[.95] active:duration-75 transition-all"
+      className="flex items-center justify-center active:scale-[.95] active:duration-75 transition-all"
       onClick={() => {
         navigate('/');
       }}

@@ -25,12 +25,7 @@ const Market = () => {
 
 
   return (
-    <div
-      className="max-w-[1000px] flex flex-col w-full h-auto pt-[16px]"
-      style={{
-        fontFamily: "Roboto, Arial, sans-serif",
-      }}
-    >
+    <div className="flex flex-col w-[850px] h-auto mt-[0px] bg-red-000">
       <div className="flex flex-col items-start">
         <button
           className="flex items-center justify-center uppercase text-gray-600 tracking-widest font-bold text-[12px] mr-[10px]"
@@ -41,16 +36,20 @@ const Market = () => {
             src={isExpanded ? CollapseAllIcon : ExpandAllIcon}
             alt={isExpanded ? "Collapse All Icon" : "Expand All Icon"}
           />
-          Visualize by graph
+          Visualize
         </button>
 
         {isExpanded && (
-          <div className='w-full h-[400px] bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-start my-[10px]'>
+          <div className='w-full h-[400px] bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center my-[10px]'>
+            <h1 className='text-6xl font-bold'>GRAPH</h1>
           </div>
         )}
 
       </div>
-      <MarketCards />
+      <div className='flex items-center justify-center'>
+        <MarketCards />
+      </div>
+      
     </div>
   );
 }

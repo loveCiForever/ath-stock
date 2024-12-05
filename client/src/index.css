@@ -14,3 +14,11 @@ button {
     display: none;
   }
 }
+
+body {
+  @apply font-sans; /* This applies the default sans font (Roboto) */
+}
+
+body {
+  overflow-x: auto; /* Allow horizontal scrolling */
+}

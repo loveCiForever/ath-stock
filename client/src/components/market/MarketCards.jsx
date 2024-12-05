@@ -20,7 +20,7 @@ const MarketCards = () => {
     {
       id: 3,
       name: "Asia Market",
-      percentage: "-0.17",
+      percentage: "-100",
       priceChange: "-34.00",
       currentPrice: "20,035.00",
     },
