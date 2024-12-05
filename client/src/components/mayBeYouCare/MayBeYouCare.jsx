@@ -7,7 +7,7 @@ import MayBeYouCareCards from './MayBeYouCareCards.jsx';
 const MayBeYouCare = () => {
 
   return (
-    <div className='flex flex-col items-center justify-center w-[900px]'>
+    <div className='flex flex-col items-center justify-center w-[650px]'>
       <div className="flex items-center justify-start w-full mb-4">
         <h1 className="text-xl font-medium bg-red-000">May be you care</h1>
         <div className="relative inline-block group">

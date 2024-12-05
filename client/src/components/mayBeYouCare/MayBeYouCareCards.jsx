@@ -15,9 +15,9 @@ const MayBeYouCareCards = () => {
       .sort((a, b) => {
         const aPriceChange = parseFloat(a[criterion].replace(/[^0-9.-]+/g, ''));
         const bPriceChange = parseFloat(b[criterion].replace(/[^0-9.-]+/g, ''));
-        return bPriceChange - aPriceChange;
+        return Math.abs(bPriceChange) - Math.abs(aPriceChange);
       })
-      .slice(0, 6);
+      .slice(0, 6); // Get the top 6 stocks
   };
   const topStocks = getTopStocks(stocks, 'priceChange');
 

@@ -41,7 +41,7 @@ const Header = ({ toggleSideBar }) => {
 
   return (
     <header
-      className={`sticky h-[65px] bg-white border-b-0 border-gray-100 flex-col w-full transition-shadow duration-300 ${isScrolled ? 
+      className={`sticky h-[65px] bg-blue-200 border-b-0 border-gray-100 flex-col w-full transition-shadow duration-300 ${isScrolled ? 
         ("shadow-md shadow-gray-400") : ("null")}
       `}
     >
