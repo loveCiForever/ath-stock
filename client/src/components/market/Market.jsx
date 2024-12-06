@@ -25,7 +25,7 @@ const Market = () => {
 
 
   return (
-    <div className="flex flex-col w-[850px] h-auto mt-[0px] bg-green-200">
+    <div className="flex flex-col w-[850px] h-auto mt-[0px] bg-white">
       <div className="flex flex-col items-start">
         <button
           className="flex items-center justify-center uppercase text-gray-600 tracking-widest font-bold text-[12px] mr-[10px]"

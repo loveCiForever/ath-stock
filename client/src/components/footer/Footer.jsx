@@ -7,7 +7,7 @@ export default function Footer() {
   const navigate = useNavigate();
 
   return (
-    <footer className='sticky bottom-0 z-50 flex-col pb-10 mt-10 w-[900px] bg-blue-200'>
+    <footer className='sticky bottom-0 z-50 flex-col pb-10 mt-10 w-[900px] bg-white'>
 
       <div className='w-full mb-10 bg-gray-200 border-t'></div>
       <div className='flex items-center justify-between w-full'>

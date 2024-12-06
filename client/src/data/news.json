@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Xuất nhập khẩu 11 tháng trên 715 tỷ USD, cán cân thương mại tiếp tục nghiêng về xuất siêu",
+        "newPaperName": "VnEconomy",
+        "time": "1 ngày trước",
+        "image": "https://media.vneconomy.vn/w800/images/upload/2024/12/06/xuat-nhap-khau-giam.jpg",
+        "link": "https://vneconomy.vn/xuat-nhap-khau-11-thang-tren-715-ty-usd-can-can-thuong-mai-tiep-tuc-nghieng-ve-xuat-sieu.htm"
+    },
+    {
+        "id": 2,
+        "title": "Thủ tướng Phạm Minh Chính và CEO Nvidia uống bia, dạo phố cổ",
+        "newPaperName": "VnExpress",
+        "time": "1 ngày trước",
+        "image": "https://vcdn1-sohoa.vnecdn.net/2024/12/06/huy-6173-1733418498-1733418740-1733419922.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=fEudA90Lq11_n9F4ubQHGw",
+        "link": "https://vnexpress.net/thu-tuong-pham-minh-chinh-va-ceo-nvidia-uong-bia-dao-pho-co-4824431.html"
+    },
+    {
+        "id": 3,
+        "title": "Google mở công ty tại Việt Nam",
+        "newPaperName": "VnExpress",
+        "time": "2 giờ trước",
+        "image": "https://vcdn1-sohoa.vnecdn.net/2024/12/06/google-2-4004-1724934936-17249-7076-8491-1733459570.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=FqAvbmkMxpwtjg15M30dxw",
+        "link": "https://vnexpress.net/google-mo-cong-ty-tai-viet-nam-4824629.html"
+    },
+    {
+        "id": 4,
+        "title": "Quốc hội dự kiến họp bất thường đầu năm 2025 xem xét sắp xếp, tinh gọn bộ máy",
+        "newPaperName": "Báo Tiền Phong",
+        "time": "3 giờ trước",
+        "image": "https://image.tienphong.vn/w1200/Uploaded/2024/ecfzyraszyr/2024_12_01/tienphong-hoinghi13-4399.jpg",
+        "link": "https://tienphong.vn/quoc-hoi-du-kien-hop-bat-thuong-dau-nam-2025-xem-xet-sap-xep-tinh-gon-bo-may-post1698014.tpo"
+    },
+    {
+        "id": 5,
+        "title": "Khám xét nhà nguyên Chánh Văn phòng UBND tỉnh An Giang",
+        "newPaperName": "Báo Người Lao Động",
+        "time": "10 giờ trước",
+        "image": "https://nld.mediacdn.vn/thumb_w/640/291774122806476800/2024/12/6/aaa-17334653684421856777392.jpg",
+        "link": "https://nld.com.vn/kham-xet-nha-nguyen-chanh-van-phong-ubnd-tinh-an-giang-196241206131542491.htm"
+    }
+]
