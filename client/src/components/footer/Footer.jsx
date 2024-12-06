@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className='sticky bottom-0 z-50 flex-col pb-10 mt-10 w-[900px] bg-white'>
 
-      <hr className="flex w-full h-[1.4px] mb-10 bg-gray-300" />
+      <div className='w-full mb-10 bg-gray-200 border-t'></div>
       <div className='flex items-center justify-between w-full'>
 
         <div className=''>

@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "name": "Advanced Micro Devices Inc",
+        "symbol": "AMD",
+        "currentPrice": "32.45",
+        "percentage": "1.233",
+        "priceChange": "+21.100"
+    },
+    {
+        "id": 2,
+        "name": "Apple Inc",
+        "symbol": "AAPL",
+        "currentPrice": "145.30",
+        "percentage": "+0.512",
+        "priceChange": "-0.750"
+    },
+    {
+        "id": 3,
+        "name": "Alphabet Inc",
+        "symbol": "GOOGL",
+        "currentPrice": "2730.00",
+        "percentage": "1.133",
+        "priceChange": "+30.000"
+    },
+    {
+        "id": 4,
+        "name": "Amazon.com Inc",
+        "symbol": "AMZN",
+        "currentPrice": "3340.00",
+        "percentage": "0.833",
+        "priceChange": "-26.000"
+    },
+    {
+        "id": 5,
+        "name": "Microsoft Corporation",
+        "symbol": "MSFT",
+        "currentPrice": "299.50",
+        "percentage": "0.312",
+        "priceChange": "+0.900"
+    },
+    {
+        "id": 6,
+        "name": "Tesla Inc",
+        "symbol": "TSLA",
+        "currentPrice": "720.00",
+        "percentage": "1.533",
+        "priceChange": "+10.500"
+    },
+    {
+        "id": 7,
+        "name": "Meta Platforms Inc",
+        "symbol": "FB",
+        "currentPrice": "355.00",
+        "percentage": "0.223",
+        "priceChange": "-0.700"
+    },
+    {
+        "id": 8,
+        "name": "NVIDIA Corporation",
+        "symbol": "NVDA",
+        "currentPrice": "220.00",
+        "percentage": "1.833",
+        "priceChange": "+4.000"
+    },
+    {
+        "id": 9,
+        "name": "Netflix Inc",
+        "symbol": "NFLX",
+        "currentPrice": "590.00",
+        "percentage": "0.411",
+        "priceChange": "+2.500"
+    },
+    {
+        "id": 10,
+        "name": "Berkshire Hathaway Inc",
+        "symbol": "BRK.B",
+        "currentPrice": "280.00",
+        "percentage": "0.622",
+        "priceChange": "+1.700"
+    },
+    {
+        "id": 11,
+        "name": "Johnson & Johnson",
+        "symbol": "JNJ",
+        "currentPrice": "165.00",
+        "percentage": "0.133",
+        "priceChange": "-0.150"
+    },
+    {
+        "id": 12,
+        "name": "Visa Inc",
+        "symbol": "VISA",
+        "currentPrice": "230.00",
+        "percentage": "0.933",
+        "priceChange": "+2.000"
+    },
+    {
+        "id": 13,
+        "name": "Procter & Gamble Co",
+        "symbol": "PG",
+        "currentPrice": "140.00",
+        "percentage": "0.411",
+        "priceChange": "+0.550"
+    },
+    {
+        "id": 14,
+        "name": "Coca-Cola Company",
+        "symbol": "KO",
+        "currentPrice": "60.00",
+        "percentage": "0.211",
+        "priceChange": "+0.120"
+    },
+    {
+        "id": 15,
+        "name": "PepsiCo Inc",
+        "symbol": "PEP",
+        "currentPrice": "160.00",
+        "percentage": "0.311",
+        "priceChange": "-0.500"
+    },
+    {
+        "id": 16,
+        "name": "Walt Disney Company",
+        "symbol": "DIS",
+        "currentPrice": "180.00",
+        "percentage": "0.711",
+        "priceChange": "+1.200"
+    },
+    {
+        "id": 17,
+        "name": "McDonald's Corporation",
+        "symbol": "MCD",
+        "currentPrice": "250.00",
+        "percentage": "20.511",
+        "priceChange": "-100.250"
+    }
+]

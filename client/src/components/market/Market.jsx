@@ -25,7 +25,7 @@ const Market = () => {
 
 
   return (
-    <div className="flex flex-col w-[850px] h-auto mt-[0px] bg-red-000">
+    <div className="flex flex-col w-[850px] h-auto mt-[0px] bg-white">
       <div className="flex flex-col items-start">
         <button
           className="flex items-center justify-center uppercase text-gray-600 tracking-widest font-bold text-[12px] mr-[10px]"
@@ -40,8 +40,8 @@ const Market = () => {
         </button>
 
         {isExpanded && (
-          <div className='w-full h-[400px] bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center my-[10px]'>
-            <h1 className='text-6xl font-bold'>GRAPH</h1>
+          <div className='w-full h-[400px] bg-red-100 border border-gray-100 rounded-xl shadow-md flex items-center justify-center my-[10px]'>
+            <h1 className='text-6xl font-bold '>GRAPH</h1>
           </div>
         )}
 
