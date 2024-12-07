@@ -134,5 +134,109 @@
         "currentPrice": "250.00",
         "percentage": "20.511",
         "priceChange": "-100.250"
+    },
+    {
+        "id": 18,
+        "name": "Salesforce.com Inc",
+        "symbol": "CRM",
+        "currentPrice": "350.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
+    },
+    {
+        "id": 19,
+        "name": "Adobe Inc",
+        "symbol": "ADBE",
+        "currentPrice": "500.00",
+        "percentage": "0.500",
+        "priceChange": "+2.50"
+    },
+    {
+        "id": 20,
+        "name": "PayPal Holdings Inc",
+        "symbol": "PYPL",
+        "currentPrice": "280.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
+    },
+    {
+        "id": 21,
+        "name": "Zoom Video Communications Inc",
+        "symbol": "ZM",
+        "currentPrice": "350.00",
+        "percentage": "1.000",
+        "priceChange": "+3.50"
+    },
+    {
+        "id": 22,
+        "name": "Square Inc",
+        "symbol": "SQ",
+        "currentPrice": "420.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
+    },
+    {
+        "id": 23,
+        "name": "Spotify Technology S.A.",
+        "symbol": "SPOT",
+        "currentPrice": "150.00",
+        "percentage": "0.500",
+        "priceChange": "+0.75"
+    },
+    {
+        "id": 24,
+        "name": "Snap Inc",
+        "symbol": "SNAP",
+        "currentPrice": "60.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
+    },
+    {
+        "id": 25,
+        "name": "Twitter Inc",
+        "symbol": "TWTR",
+        "currentPrice": "70.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
+    },
+    {
+        "id": 26,
+        "name": "Pinterest Inc",
+        "symbol": "PINS",
+        "currentPrice": "25.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
+    },
+    {
+        "id": 27,
+        "name": "Lyft Inc",
+        "symbol": "LYFT",
+        "currentPrice": "20.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
+    },
+    {
+        "id": 28,
+        "name": "Uber Technologies Inc",
+        "symbol": "UBER",
+        "currentPrice": "30.00",
+        "percentage": "0.500",
+        "priceChange": "+0.15"
+    },
+    {
+        "id": 29,
+        "name": "Roku Inc",
+        "symbol": "ROKU",
+        "currentPrice": "150.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
+    },
+    {
+        "id": 30,
+        "name": "NIO Inc",
+        "symbol": "NIO",
+        "currentPrice": "40.00",
+        "percentage": "0.000",
+        "priceChange": "0.000"
     }
 ]

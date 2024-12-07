@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import MayBeYouCareCard from './MayBeYouCareCard';
-import stocksData from '../../data/stocks.json';
+import StockData from '../../data/stocks.json';
+import React, { useState, useEffect } from 'react';
+import TopActiveStockCard from './topActiveStockCard';
 
-const MayBeYouCareCards = () => {
+const topActiveStockCards = () => {
   const [stocks, setStocks] = useState([]);
   useEffect(() => {
-    setStocks(stocksData);
+    setStocks(StockData);
     // console.log(stocksData);
   }, [])
-
 
   const getTopStocksPriceChange = (stocks, criterion) => {
     return stocks
@@ -17,15 +16,16 @@ const MayBeYouCareCards = () => {
         const bPriceChange = parseFloat(b[criterion].replace(/[^0-9.-]+/g, ''));
         return Math.abs(bPriceChange) - Math.abs(aPriceChange);
       })
-      .slice(0, 10); // Get the top 6 stocks
+      .slice(0, 9); // Get the top 20 stocks
   };
   const topStocks = getTopStocksPriceChange(stocks, 'priceChange');
 
   return (
-    <div className="flex flex-wrap">
-      {topStocks.map(stock => (
-        <MayBeYouCareCard
+    <div className='flex flex-wrap'>
+      {topStocks.map((stock, index) => (
+        <TopActiveStockCard
           key={stock.id}
+          rank={index + 1}
           symbol={stock.symbol}
           name={stock.name}
           currentPrice={stock.currentPrice}
@@ -37,4 +37,4 @@ const MayBeYouCareCards = () => {
   );
 }
 
-export default MayBeYouCareCards;
+export default topActiveStockCards;

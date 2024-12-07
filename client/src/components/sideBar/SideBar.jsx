@@ -33,7 +33,7 @@ const SideBar = ({ toggleSideBar }) => {
       ref={sidebarRef}
       className="fixed inset-0 flex transition ease-in-out"
     >
-      <nav className="relative z-10 bg-white shadow-xl w-60">
+      <nav className="relative bg-white z-100 shadow-md shadow-gray-400 w-60 bg-red-000">
 
         <div className="flex h-[65px] sticky items-center justify-start">
           <div className="ml-4 bg-red-00 ">

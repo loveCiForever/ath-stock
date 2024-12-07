@@ -10,6 +10,8 @@ import Market from '../components/market/Market.jsx';
 import MainSection from '../components/mainSection/MainSection.jsx';
 import MayBeYouCare from '../components/mayBeYouCare/MayBeYouCare.jsx';
 import FinancialNew from '../components/financialNews/FinancialNew.jsx';
+import TopPriceStock from '../components/topPriceStock/topPriceStock.jsx';
+import TopActiveStock from '../components/topActiveStock/topActiveStock.jsx';
 
 const HomePage = () => {
   useEffect(() => {
@@ -26,11 +28,14 @@ const HomePage = () => {
   return (
     <div className='flex flex-col items-center min-w-full min-h-screen justify-center// bg-yellow-00'>
 
-      <div className='fixed inset-x-0 top-0 z-1 min-w-[1000px] bg-red-00'>
+      <div className='fixed inset-x-0 top-0 z-10 min-w-[1000px] bg-red-00'>
         <Header toggleSideBar={toggleSideBar} />
       </div>
 
+      <div className='z-10'>
       {isSideBarOpen ? <SideBar toggleSideBar={toggleSideBar} /> : ''}
+      </div>
+     
 
       <div className='flex items-center justify-center w-auto mt-20'>
         <Market />
@@ -38,7 +43,7 @@ const HomePage = () => {
 
       <SearchBar />
 
-      <div className='flex w-[900px]'>
+      <div className='flex w-[1000px]'>
         <div className='flex-col'>
           <div className='flex items-stretch justify-center bg-red mt-[20px] h-auto//'>
             <MayBeYouCare />
@@ -48,16 +53,14 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div>
-          
+        <div className='w-[350px] h-auto ml-6 my-[20px] bg-red-000'>
+          <TopPriceStock />
+          <div className='my-6'></div>
+          <TopActiveStock />
         </div>
-
       </div>
 
-
-
-
-      <div className='fixed inset-x-0 bottom-0 z-10 flex items-center justify-center px-10 min-w-[800px]'>
+      <div className='flex items-center justify-center px-10 min-w-[800px]'>
         <Footer toggleSideBar={toggleSideBar} />
       </div>
 

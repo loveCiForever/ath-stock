@@ -1,22 +1,34 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-import InfoIcon from '../../assets/icon/infoIcon.png';
-import UpArrowIcon from '../../assets/icon/upArrowIcon.png';
-import DownArrowIcon from '../../assets/icon/downArrowIcon.png';
-import AddCircle from '../../assets/icon/addCircle.png';
-import '../../../src/index.css'
-
-const MayBeYouCareCard = ({ symbol, name, percentage, priceChange, currentPrice, isUp }) => {
-
+const topPriceStockCard = ({ symbol, rank, name, percentage, priceChange, currentPrice, isUp }) => {
   const [isDialogOpen, setDialogOpen] = useState(false);
   const openDialog = () => setDialogOpen(true);
   const closeDialog = () => setDialogOpen(false);
 
-
   const truncateName = () => {
-    const maxLength = 25;
+    const maxLength = 10;
     return (name.length > maxLength ? name.slice(0, maxLength) + '...' : name);
   }
+
+  const getStatusColorBg = (priceChange) => {
+    if(priceChange > 0) {
+      return 'bg-green-200'
+    } else if(priceChange < 0) {
+      return 'bg-red-100'
+    } else {
+      return 'bg-gray-400'
+    }
+  };
+
+  const getStatusColorText = (priceChange) => {
+    if(priceChange > 0) {
+      return 'text-green-700'
+    } else if(priceChange < 0) {
+      return 'text-red-700'
+    } else {
+      return 'text-white'
+    }
+  };
 
   const Dialog = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
@@ -41,8 +53,8 @@ const MayBeYouCareCard = ({ symbol, name, percentage, priceChange, currentPrice,
                 {name}
               </p>
             </div>
-            
-            <button 
+
+            <button
               className='text-sm text-gray-500 hover:text-gray-900'
               onClick={closeDialog}
             >
@@ -60,15 +72,15 @@ const MayBeYouCareCard = ({ symbol, name, percentage, priceChange, currentPrice,
   };
 
   return (
-    <div className=''>
+    <div className="mx-3">
       <button
-        className='flex items-center justify-between w-[650px] overflow-y-auto bg-red-000 h-14 border-t border-gray-200 hover:bg-gray-50'
+        className='flex items-center justify-between w-[300px] overflow-y-auto bg-red-000 h-14 border-t border-gray-200 hover:bg-gray-50'
         onClick={() => {
           openDialog()
         }}
       >
         <div className='flex'>
-          <span className='flex items-center justify-center w-[70px] h-6 px-2 py-1 text-xs font-semibold tracking-widest text-white bg-orange-400 rounded-md'>
+          <span className={`flex items-center justify-center w-[70px] h-6 px-2 py-1 text-xs font-bold tracking-widest rounded-md ${getStatusColorBg(priceChange)} ${getStatusColorText(priceChange)}`}>
             {symbol}
           </span>
           <h1 className='flex items-center justify-center ml-4 text-sm font-semibold tracking-wider text-gray-600'>
@@ -85,49 +97,12 @@ const MayBeYouCareCard = ({ symbol, name, percentage, priceChange, currentPrice,
           <div className='flex-1 mr-1 font-semibold text-gray-600 text-[16px] '>
             {currentPrice} $
           </div>
-          <div className={`flex items-center justify-end text-[16px] mr-3 font-semibold tracking-wider w-[100px] bg-red-000 ${priceChange > 0 ? "text-green-700" : "text-red-700"}`}>
-            {priceChange} 
-          </div>
-          <div className={`flex w-[100px] px-1 py-1 rounded-md text-[15px] font-semibold tracking-wider items-center justify-center ${priceChange > 0 ? "text-green-700 bg-green-100" : "text-red-700 bg-red-100"}`}>
-            {/* {priceChange > 0 ? `+${percentage}` : `-${percentage}`}   */}
-            <img
-              src={priceChange > 0 ? UpArrowIcon : DownArrowIcon}
-              alt={priceChange > 0 ? "Up Arrow" : "Down Arrow"}
-              className="w-4 h-4 mr-1 opacity-100"
-            />
-            {percentage} %
-          </div>
-          <button
-            onClick={null}
-            className='active:scale-[.90] active:duration-75 transition-all'
-          >
-            <img
-              src={AddCircle}
-              alt="add circle"
-              className='w-5 ml-4'
-            />
-          </button>
-
         </div>
       </button>
-
-
-      {/* {isDialogOpen && (
-        <div className='bg-red-200 w-100 h-100'>
-          <div
-            className=''
-            ref={dialogRef}
-          >
-            Details of {name}
-          </div>
-
-        </div>
-      )} */}
-
 
       <Dialog isOpen={isDialogOpen} onClose={closeDialog} />
     </div>
   );
 }
 
-export default MayBeYouCareCard;
+export default topPriceStockCard;
