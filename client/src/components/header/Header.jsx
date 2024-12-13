@@ -9,12 +9,11 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 const Header = ({ toggleSideBar }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser ] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      // console.log("isScrolled:", window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,52 +25,44 @@ const Header = ({ toggleSideBar }) => {
   useEffect(() => {
     const auth = getAuth();
 
-    const unsubsrcibe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setIsSignedIn(true);
-        setUser(user);
+        setUser (user);
       } else {
         setIsSignedIn(false);
-        setUser(null);
+        setUser (null);
       }
     });
 
-    return () => unsubsrcibe();
-  }, [])
+    return () => unsubscribe();
+  }, []);
 
   return (
     <header
-      className={`sticky h-[65px] bg-white border-b-0 border-gray-100 flex-col w-full transition-shadow duration-300 ${isScrolled ? 
-        ("shadow-md shadow-gray-400") : ("null")}
-      `}
+      className={`sticky h-[65px] bg-white border-b border-gray-200 flex-col w-full transition-shadow duration-300 ${isScrolled  ? "shadow-sm shadow-gray-300" : "null"}`}
     >
-
       <div className="flex items-center justify-between w-full h-full">
-      {/* cụm hamburger + logo */}
         <div className="flex items-center justify-center bg-red-000">
-          <div className="ml-4">
+          <div className={`ml-4 visible`}>
             <Hamburger toggleSideBar={toggleSideBar} />
           </div>
           
-          <div className="ml-4">
+          <div className="ml-5">
             <Branding />
           </div>      
         </div>
 
-        {/* Cụm theme switcher + noti + profile */}
         <div className="flex items-center justify-center mr-5 bg-red-000">
           <div className="mr-4">
             <Notification />
           </div>
-        
-
+          
           <div className="mr-3">
-            {isSignedIn ? (<Account user={user} />) : (<SignInButton />)}
+            {isSignedIn ? <Account user={user} /> : <SignInButton />}
           </div>
         </div>
       </div>
-
-
     </header>
   );
 };

@@ -17,15 +17,12 @@ const CommunityPage = () => {
   }
 
   return (
-    <div className='flex flex-col items-center justify-center min-w-[1450px]'>
+    <div className='flex flex-col items-center min-w-full min-h-screen justify-center// bg-yellow-00'>
       <Header toggleSideBar={toggleSideBar} />
       {/* isSideBarOpen true thì render SideBar và ngược lại */}
       {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />}
 
-      {/* <div className="flex flex-col items-center"><Markets /></div> */}
-      {/* <SearchBar /> */}
-      {/* <MainSection /> */}
-      <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-000">
+      <div className="flex w-[1000px] h-screen">
         Community Page
       </div>
 

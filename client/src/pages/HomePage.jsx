@@ -20,28 +20,41 @@ const HomePage = () => {
   }, []);
 
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const toggleSideBar = () => {
-    setIsSideBarOpen(!isSideBarOpen);
+  const toggleSideBar = (isOpen) => {
+    setIsSideBarOpen(isOpen);
   }
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const sidebar = document.querySelector('.sidebar'); // Add a class to your sidebar for selection
+      if (sidebar && !sidebar.contains(event.target) && isSideBarOpen) {
+        toggleSideBar(false); // Close the sidebar
+      }
+    };
 
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSideBarOpen]);
 
   return (
-    <div className='flex flex-col items-center min-w-full min-h-screen justify-center// bg-yellow-00'>
+    <div className='flex flex-col items-center min-w-full min-h-screen bg-white'>
 
-      <div className='fixed inset-x-0 top-0 z-10 min-w-[1000px] bg-red-00'>
-        <Header toggleSideBar={toggleSideBar} />
+      <div className='fixed inset-x-0 min-w-[1000px] bg-red-00 w-full'>
+        <Header toggleSideBar={() => toggleSideBar(!isSideBarOpen)} />
+        {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />}
       </div>
 
-      <div className='z-10'>
-      {isSideBarOpen ? <SideBar toggleSideBar={toggleSideBar} /> : ''}
-      </div>
-     
+
+
+
+
 
       <div className='flex items-center justify-center w-auto mt-20'>
         <Market />
       </div>
 
-      <SearchBar />
+      {/* <SearchBar /> */}
 
       <div className='flex w-[1000px]'>
         <div className='flex-col'>
@@ -60,8 +73,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className='flex items-center justify-center px-10 min-w-[800px]'>
-        <Footer toggleSideBar={toggleSideBar} />
+      <div className='w-full flex items-center justify-center'>
+        <Footer />
       </div>
 
     </div>
