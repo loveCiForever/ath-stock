@@ -4,239 +4,269 @@
         "name": "Advanced Micro Devices Inc",
         "symbol": "AMD",
         "currentPrice": "32.45",
-        "percentage": "1.233",
-        "priceChange": "+21.100"
+        "percentage": "1.23",
+        "priceChange": "+21.10",
+        "field": "Semiconductors"
     },
     {
         "id": 2,
         "name": "Apple Inc",
         "symbol": "AAPL",
         "currentPrice": "145.30",
-        "percentage": "+0.512",
-        "priceChange": "-0.750"
+        "percentage": "+0.52",
+        "priceChange": "-0.75",
+        "field": "Technology"
     },
     {
         "id": 3,
         "name": "Alphabet Inc",
         "symbol": "GOOGL",
         "currentPrice": "2730.00",
-        "percentage": "1.133",
-        "priceChange": "+30.000"
+        "percentage": "1.13",
+        "priceChange": "+30.00",
+        "field": "Technology"
     },
     {
         "id": 4,
         "name": "Amazon.com Inc",
         "symbol": "AMZN",
         "currentPrice": "3340.00",
-        "percentage": "0.833",
-        "priceChange": "-26.000"
+        "percentage": "0.83",
+        "priceChange": "-26.00",
+        "field": "E-commerce"
     },
     {
         "id": 5,
         "name": "Microsoft Corporation",
         "symbol": "MSFT",
         "currentPrice": "299.50",
-        "percentage": "0.312",
-        "priceChange": "+0.900"
+        "percentage": "0.32",
+        "priceChange": "+0.00",
+        "field": "Technology"
     },
     {
         "id": 6,
         "name": "Tesla Inc",
         "symbol": "TSLA",
         "currentPrice": "720.00",
-        "percentage": "1.533",
-        "priceChange": "+10.500"
+        "percentage": "1.53",
+        "priceChange": "+10.50",
+        "field": "Automotive"
     },
     {
         "id": 7,
         "name": "Meta Platforms Inc",
         "symbol": "FB",
         "currentPrice": "355.00",
-        "percentage": "0.223",
-        "priceChange": "-0.700"
+        "percentage": "0.23",
+        "priceChange": "-0.70",
+        "field": "Social Media"
     },
     {
         "id": 8,
         "name": "NVIDIA Corporation",
         "symbol": "NVDA",
         "currentPrice": "220.00",
-        "percentage": "1.833",
-        "priceChange": "+4.000"
+        "percentage": "1.83",
+        "priceChange": "+4.00",
+        "field": "Semiconductors"
     },
     {
         "id": 9,
         "name": "Netflix Inc",
         "symbol": "NFLX",
         "currentPrice": "590.00",
-        "percentage": "0.411",
-        "priceChange": "+2.500"
+        "percentage": "0.41",
+        "priceChange": "+2.50",
+        "field": "Streaming"
     },
     {
         "id": 10,
         "name": "Berkshire Hathaway Inc",
         "symbol": "BRK.B",
         "currentPrice": "280.00",
-        "percentage": "0.622",
-        "priceChange": "+1.700"
+        "percentage": "0.62",
+        "priceChange": "+1.00",
+        "field": "Conglomerate"
     },
     {
         "id": 11,
         "name": "Johnson & Johnson",
         "symbol": "JNJ",
         "currentPrice": "165.00",
-        "percentage": "0.133",
-        "priceChange": "-0.150"
+        "percentage": "0.13",
+        "priceChange": "-0.10",
+        "field": "Healthcare"
     },
     {
         "id": 12,
         "name": "Visa Inc",
         "symbol": "VISA",
         "currentPrice": "230.00",
-        "percentage": "0.933",
-        "priceChange": "+2.000"
+        "percentage": "0.93",
+        "priceChange": "+2.00",
+        "field": "Financial Services"
     },
     {
         "id": 13,
         "name": "Procter & Gamble Co",
         "symbol": "PG",
         "currentPrice": "140.00",
-        "percentage": "0.411",
-        "priceChange": "+0.550"
+        "percentage": "0.41",
+        "priceChange": "+0.50",
+        "field": "Consumer Goods"
     },
     {
         "id": 14,
         "name": "Coca-Cola Company",
         "symbol": "KO",
         "currentPrice": "60.00",
-        "percentage": "0.211",
-        "priceChange": "+0.120"
+        "percentage": "0.21",
+        "priceChange": "+0.20",
+        "field": "Beverages"
     },
     {
         "id": 15,
         "name": "PepsiCo Inc",
         "symbol": "PEP",
         "currentPrice": "160.00",
-        "percentage": "0.311",
-        "priceChange": "-0.500"
+        "percentage": "0.31",
+        "priceChange": "-0.50",
+        "field": "Beverages"
     },
     {
         "id": 16,
         "name": "Walt Disney Company",
         "symbol": "DIS",
         "currentPrice": "180.00",
-        "percentage": "0.711",
-        "priceChange": "+1.200"
+        "percentage": "0.71",
+        "priceChange": "+1.00",
+        "field": "Entertainment"
     },
     {
         "id": 17,
         "name": "McDonald's Corporation",
         "symbol": "MCD",
         "currentPrice": "250.00",
-        "percentage": "20.511",
-        "priceChange": "-100.250"
+        "percentage": "20.11",
+        "priceChange": "-100.20",
+        "field": "Fast Food"
     },
     {
         "id": 18,
         "name": "Salesforce.com Inc",
         "symbol": "CRM",
         "currentPrice": "350.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Cloud Computing"
     },
     {
         "id": 19,
         "name": "Adobe Inc",
         "symbol": "ADBE",
         "currentPrice": "500.00",
-        "percentage": "0.500",
-        "priceChange": "+2.50"
+        "percentage": "0.50",
+        "priceChange": "+2.50",
+        "field": "Software"
     },
     {
         "id": 20,
         "name": "PayPal Holdings Inc",
         "symbol": "PYPL",
         "currentPrice": "280.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Financial Services"
     },
     {
         "id": 21,
         "name": "Zoom Video Communications Inc",
         "symbol": "ZM",
         "currentPrice": "350.00",
-        "percentage": "1.000",
-        "priceChange": "+3.50"
+        "percentage": "1.00",
+        "priceChange": "+3.50",
+        "field": "Communication Services"
     },
     {
         "id": 22,
         "name": "Square Inc",
         "symbol": "SQ",
         "currentPrice": "420.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Financial Services"
     },
     {
         "id": 23,
         "name": "Spotify Technology S.A.",
         "symbol": "SPOT",
         "currentPrice": "150.00",
-        "percentage": "0.500",
-        "priceChange": "+0.75"
+        "percentage": "0.50",
+        "priceChange": "+0.75",
+        "field": "Streaming"
     },
     {
         "id": 24,
         "name": "Snap Inc",
         "symbol": "SNAP",
         "currentPrice": "60.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Social Media"
     },
     {
         "id": 25,
         "name": "Twitter Inc",
         "symbol": "TWTR",
         "currentPrice": "70.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Social Media"
     },
     {
         "id": 26,
         "name": "Pinterest Inc",
         "symbol": "PINS",
         "currentPrice": "25.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Social Media"
     },
     {
         "id": 27,
         "name": "Lyft Inc",
         "symbol": "LYFT",
         "currentPrice": "20.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Transportation"
     },
     {
         "id": 28,
         "name": "Uber Technologies Inc",
         "symbol": "UBER",
         "currentPrice": "30.00",
-        "percentage": "0.500",
-        "priceChange": "+0.15"
+        "percentage": "0.50",
+        "priceChange": "+0.15",
+        "field": "Transportation"
     },
     {
         "id": 29,
         "name": "Roku Inc",
         "symbol": "ROKU",
         "currentPrice": "150.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Streaming"
     },
     {
         "id": 30,
         "name": "NIO Inc",
         "symbol": "NIO",
         "currentPrice": "40.00",
-        "percentage": "0.000",
-        "priceChange": "0.000"
+        "percentage": "0.00",
+        "priceChange": "0.00",
+        "field": "Automotive"
     }
 ]

@@ -7,7 +7,7 @@ const MayBeYouCare = () => {
   return (
     <div className='flex flex-col items-center justify-center w-[650px]'>
       <div className="flex items-center justify-start w-full mb-4">
-        <h1 className="text-xl font-semibold bg-red-000">May be you care</h1>
+        <h1 className="text-xl font-semibold text-gray-600">May be you care</h1>
         <div className="relative inline-block group">
           <button className="focus:outline-none">
             <img

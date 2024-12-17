@@ -29,7 +29,7 @@ const DonatePage = () => {
   // const toggleSearchBar = (false);
   // console.log(window.location.pathname === '/donate');
   return (
-    <div className='flex flex-col items-center justify-center min-w-[1450px] min-h-screen'>
+    <div className='flex flex-col items-center justify-center min-w-[1450px] min-h-screen bg-white text-gray-600'>
       <Header toggleSideBar={toggleSideBar} />
       {/* isSideBarOpen true thì render SideBar và ngược lại */}
       {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar}  />}
@@ -61,7 +61,7 @@ const DonatePage = () => {
           continue our work towards empowering students through technology.
         </h2>
         
-        <div className='flex mt-[100px] justify-center items-center'>
+        <div className='flex mt-[50px] justify-center items-center'>
           <div className='flex flex-col justify-center items-center'>
             {/* <span className='text-xl font-mono font-semibold'>Account owner: Nguyen Quang Huy</span> */}
             <span className='text-xl font-mono font-semibold px-10 py-1 bg-orange-300 rounded-xl mb-[10px]'>TP Bank</span>

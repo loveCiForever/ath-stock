@@ -4,31 +4,59 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Header from '../components/header/Header.jsx';
 import Footer from '../components/footer/Footer.jsx';
 import SideBar from '../components/sideBar/SideBar.jsx';
+import SearchBar from '../components/searchBar/SearchBar.jsx';
+import Market from '../components/market/Market.jsx';
+
+import MainSection from '../components/mainSection/MainSection.jsx';
+import MayBeYouCare from '../components/mayBeYouCare/MayBeYouCare.jsx';
+import FinancialNew from '../components/financialNews/FinancialNew.jsx';
+import TopPriceStock from '../components/topPriceStock/topPriceStock.jsx';
+import TopActiveStock from '../components/topActiveStock/topActiveStock.jsx';
 
 const MarketTrendPage = () => {
   useEffect(() => {
     document.title = "Market Trend";
   }, []);
 
+  
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const toggleSideBar = () => {
-    setIsSideBarOpen(!isSideBarOpen);
+  const toggleSideBar = (isOpen) => {
+    setIsSideBarOpen(isOpen);
   }
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const sidebar = document.querySelector('.sidebar'); // Add a class to your sidebar for selection
+      if (sidebar && !sidebar.contains(event.target) && isSideBarOpen) {
+        toggleSideBar(false); // Close the sidebar
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSideBarOpen]);
 
   return (
-    <div className='flex flex-col items-center justify-center min-w-[1450px]'>
-      <Header toggleSideBar={toggleSideBar} />
-      {/* isSideBarOpen true thì render SideBar và ngược lại */}
-      {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />}
+    <div className='flex flex-col items-center min-w-full min-h-screen bg-white'>
 
-      {/* <div className="flex flex-col items-center"><Markets /></div> */}
-      {/* <SearchBar /> */}
-      {/* <MainSection /> */}
-      <div className="flex items-center justify-center w-full h-screen text-6xl font-bold bg-red-000">
-        Market Trend Page
+      <div className='fixed inset-x-0 min-w-[1000px] bg-red-00 w-full'>
+        <Header toggleSideBar={() => toggleSideBar(!isSideBarOpen)} />
+        {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />}
       </div>
 
-      <Footer/>
+      <div className='flex items-center justify-center w-auto mt-20'>
+        <Market />
+      </div>
+
+      <SearchBar />
+
+      
+
+      <div className='w-full flex items-center justify-center'>
+        <Footer />
+      </div>
+
     </div>
   );
 }

@@ -72,7 +72,7 @@ const topPriceStockCard = ({ symbol, rank, name, percentage, priceChange, curren
   };
 
   return (
-    <div className="mx-3">
+    <div className="mx-4">
       <button
         className='flex items-center justify-between w-[300px] overflow-y-auto bg-red-000 h-14 border-t border-gray-200 hover:bg-gray-50'
         onClick={() => {

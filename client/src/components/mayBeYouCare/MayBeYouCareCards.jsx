@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import MayBeYouCareCard from './MayBeYouCareCard';
 import stocksData from '../../data/stocks.json';
 
@@ -6,9 +6,7 @@ const MayBeYouCareCards = () => {
   const [stocks, setStocks] = useState([]);
   useEffect(() => {
     setStocks(stocksData);
-    // console.log(stocksData);
-  }, [])
-
+  }, []);
 
   const getTopStocksPriceChange = (stocks, criterion) => {
     return stocks
@@ -17,8 +15,9 @@ const MayBeYouCareCards = () => {
         const bPriceChange = parseFloat(b[criterion].replace(/[^0-9.-]+/g, ''));
         return Math.abs(bPriceChange) - Math.abs(aPriceChange);
       })
-      .slice(0, 10); // Get the top 6 stocks
+      .slice(0, 10); // Get the top 10 stocks
   };
+  
   const topStocks = getTopStocksPriceChange(stocks, 'priceChange');
 
   return (
@@ -31,6 +30,7 @@ const MayBeYouCareCards = () => {
           currentPrice={stock.currentPrice}
           percentage={stock.percentage}
           priceChange={stock.priceChange}
+          field={stock.field}
         />
       ))}
     </div>

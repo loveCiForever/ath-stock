@@ -94,8 +94,8 @@ const topActiveStockCard = ({ symbol, rank, name, percentage, priceChange, curre
         </div>
 
         <div className='flex items-center justify-center'>
-          <div className='flex-1 mr-1 font-semibold text-gray-600 text-[16px] '>
-            {currentPrice} $
+          <div className={`flex-1 mr-1 font-semibold text-gray-600 text-[16px] ${getStatusColorText(priceChange)} `}>
+            {priceChange} $
           </div>
         </div>
       </button>

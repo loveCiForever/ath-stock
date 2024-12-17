@@ -12,6 +12,7 @@ import MayBeYouCare from '../components/mayBeYouCare/MayBeYouCare.jsx';
 import FinancialNew from '../components/financialNews/FinancialNew.jsx';
 import TopPriceStock from '../components/topPriceStock/topPriceStock.jsx';
 import TopActiveStock from '../components/topActiveStock/topActiveStock.jsx';
+import CreatePortfolio from '../components/createPortfolio/CreatePortfolio.jsx';
 
 const HomePage = () => {
   useEffect(() => {
@@ -45,29 +46,24 @@ const HomePage = () => {
         {isSideBarOpen && <SideBar toggleSideBar={toggleSideBar} />}
       </div>
 
-
-
-
-
-
       <div className='flex items-center justify-center w-auto mt-20'>
         <Market />
       </div>
 
-      {/* <SearchBar /> */}
+      <SearchBar />
 
       <div className='flex w-[1000px]'>
         <div className='flex-col'>
           <div className='flex items-stretch justify-center bg-red mt-[20px] h-auto//'>
             <MayBeYouCare />
           </div>
-          <div className='flex mt-10 mb-32 bg-red-00'>
+          <div className='flex mt-10 mb-0 bg-red-00'>
             <FinancialNew />
           </div>
         </div>
 
         <div className='w-[350px] h-auto ml-6 my-[20px] bg-red-000'>
-          <TopPriceStock />
+          <CreatePortfolio />
           <div className='my-6'></div>
           <TopActiveStock />
         </div>
